@@ -65,6 +65,7 @@ if(empty($_POST['nom']))
   }
 if(!$erreur)
 {
+ 
 	$nom=$_POST['nom'];
 	$prenom=$_POST['prenom'];
 	$club=$_POST['club'];
@@ -75,6 +76,7 @@ if(!$erreur)
   $heuresDispo=$_POST['heuresDispo'];
 	$req=$bdd->prepare('INSERT INTO infoperso(nom,prenom,club,poste1,poste2,poste3,joursDispo,heuresDispo) VALUES (:nom,:prenom,:club,:poste1,:poste2,:poste3,:joursDispo,:heuresDispo)');
 	$req->execute(array(
+  
 	'nom'=>$nom,
 	'prenom'=>$prenom,
 	'club'=>$club,
@@ -91,9 +93,10 @@ if(!$erreur)
 	// $donnees=$rep->fetch();
 }
 else{
-	echo 'remplie les champ poto';
+	echo 'remplie les champ poto</br>';
 }
 }
+
 
 // echo $donnees['nom']." ";
 // echo $donnees['prenom'];
