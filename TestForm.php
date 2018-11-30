@@ -15,25 +15,39 @@
 <form method="POST" action="test.php" enctype="multipart/form-data">
 
     <fieldset>
-        <legend> Questions Préléminaires : </legend>
+        <legend>Questions Préléminaires : </legend>
         <p>Avez vous déjà bénévole pour cet évènement ? </p>
-        Oui <input type="radio" name="event" checked="checked" />
-        Non <input type="radio" name="event" /><br />
+        <label for="dejBene">Oui</label>
+        <input type="radio" name="dejBene" checked="checked" value="Oui"/>
+        <label for="dejBene">Non</label>
+        <input type="radio" name="dejBene" value="Non"/><br/>
+        <p>Êtes-vous licencié(e) à la FFBAD ou autre Fédération Nationale de Badminton ?</p>
+        <label for="licence">Oui</label>
+        <input type="radio" name="licence" checked="checked" value="Oui"/>
+        <label for="licence">Non</label>
+        <input type="radio" name="licence" value="Non"/><br/>
+        <p>Par quel(s) moyen savez-vous entendue parler de cet évènement?<br/>(Indiquer votre réponse dans la zone de texte ci-dessous)</p>
+        <textarea name="textarea" cols="70" rows="7"></textarea><br/>
+        <p>Acceptez-vous le règlement de cette inscription en tant que bénévoles ?</p>
+        <label for="reglement">Oui</label>
+        <input type="radio" name="reglement" checked="checked" value="Oui"/>
+        <label for="reglement">Non</label>
+        <input type="radio" name="reglement" value="Non"/>
     </fieldset>
 
     <fieldset>
-        <legend> Saisie des Informations personnelles : </legend>
+        <legend>Mes Informations personnelles : </legend>
         <p>Nom : </p>
         <input type="text" name="nom"/><br/>
         <p>Prénom :</p>
         <input type="text" name="prenom"/>
         <br/><br/>
         <p>Date de Naissance : </p>
-        <input type="text" name="jour"/>
+        <input type="text" name="jourNai"/>
         <p>Jour</p>
-        <input type="text" name="mois"/>
+        <input type="text" name="moisNai"/>
         <p>Mois</p>
-        <input type="text" name="annee"/>
+        <input type="text" name="anneeNai"/>
         <p>Année</p>
         <br/><br/>
         <p>Mail : </p>
@@ -43,7 +57,7 @@
         <p>Club : </p>
         <input type="text" name="club"/>
         <p>Taille de T-Shirt :</p>
-        <select name="select">
+        <select name="t-shirt">
             <option value="tailleS">S</option>
             <option value="tailleM">M</option>
             <option value="tailleL">L</option>
@@ -52,7 +66,7 @@
             <option value="tailleXXXL">XXXL</option>
         </select><br/><br/>
         <p>Langue étrangères : (3 maximum)</p>
-        <select name="select">
+        <select name="lang1">
             <option value="aucune">Aucune</option>
             <option value="anglais">Anglais</option>
             <option value="allemand">Allemand</option>
@@ -60,7 +74,7 @@
             <option value="mandarin">Mandarin</option>
             <option value="espagnole">Espagnole</option>
         </select>
-        <select name="select">
+        <select name="lang2">
             <option value="aucune">Aucune</option>
             <option value="anglais">Anglais</option>
             <option value="allemand">Allemand</option>
@@ -68,7 +82,7 @@
             <option value="mandarin">Mandarin</option>
             <option value="espagnole">Espagnole</option>
         </select>
-        <select name="select">
+        <select name="lang3">
             <option value="aucune">Aucune</option>
             <option value="anglais">Anglais</option>
             <option value="allemand">Allemand</option>
@@ -78,7 +92,91 @@
         </select><br/><br/>
         <!-- <input type="button" value="Ajouter Une langue"/><br /> -->
     </fieldset>
- 
+
+    <fieldset>
+        <legend>Mon poste :</legend>
+        <p>Choix n°1 :</p>
+        <select name="post1">
+            <option value="info">Informatique</option>
+            <option value="plateau">Plateau</option>
+            <option value="com">Communication</option>
+            <option value="buvette">Buvette</option>
+            <option value="gestJoueurs">Gestion des joueurs</option>
+            <option value="officielsTech">Officiel Technique</option>
+            <option value="restBene">Restaurant bénévole</option>
+        </select>
+        <br/>
+        <p>Choix n°2 :</p>
+        <select name="post2">
+            <option value="info">Informatique</option>
+            <option value="plateau">Plateau</option>
+            <option value="com">Communication</option>
+            <option value="buvette">Buvette</option>
+            <option value="gestJoueurs">Gestion des joueurs</option>
+            <option value="officielsTech">Officiel Technique</option>
+            <option value="restBene">Restaurant bénévole</option>
+        </select>
+        <br/>
+        <p>Choix n°3 :</p>
+        <select name="post3">
+            <option value="info">Informatique</option>
+            <option value="plateau">Plateau</option>
+            <option value="com">Communication</option>
+            <option value="buvette">Buvette</option>
+            <option value="gestJoueurs">Gestion des joueurs</option>
+            <option value="officielsTech">Officiel Technique</option>
+            <option value="restBene">Restaurant bénévole</option>
+        </select>
+        <br/>
+        <p>Informations sur les postes à compléter</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Mes disponibilités :</legend>
+        <p>Veuillez rentrer vos disponibilités :</p>
+        <label for="mardMat">Mardi : matin (8h-15h)</label>
+        <input type="checkbox" name="mardMat" value="mardMat"/>
+        <label for="mardAprem">après-midi (15h-22h)</label>
+        <input type="checkbox" name="mardAprem" value="mardAprem"/>
+        <br/><br/>
+        <label for="merMat">Mercredi : matin (8h-15h)</label>
+        <input type="checkbox" name="merMat" value="merMat"/>
+        <label for="merAprem">après-midi (15h-22h)</label>
+        <input type="checkbox" name="merAprem" value="merAprem"/>
+        <br/><br/>
+        <label for="jeuMat">Jeudi : matin (8h-15h)</label>
+        <input type="checkbox" name="jeuMat" value="jeuMat"/>
+        <label for="jeuAprem">après-midi (15h-22h)</label>
+        <input type="checkbox" name="jeuAprem" value="jeuAprem"/>
+        <br/><br/>
+        <label for="venMat">Vendredi : matin (8h-15h)</label>
+        <input type="checkbox" name="venMat" value="venMat"/>
+        <label for="venAprem">après-midi (15h-22h)</label>
+        <input type="checkbox" name="venAprem" value="venAprem"/>
+        <br/><br/>
+        <label for="samMat">Samedi : matin (8h-15h)</label>
+        <input type="checkbox" name="samMat" value="samMat"/>
+        <label for="samAprem">après-midi (15h-22h)</label>
+        <input type="checkbox" name="samAprem" value="samAprem"/>
+        <br/><br/>
+        <label for="dimMat">Dimanche : matin (8h-15h)</label>
+        <input type="checkbox" name="dimMat" value="dimMat"/>
+        <label for="dimAprem">après-midi (15h-22h)</label>
+        <input type="checkbox" name="dimAprem" value="dimAprem"/>
+        <br/>
+    </fieldset>
+
+    <fieldset>
+        <legend>Mail récapitulatif :</legend>
+        <p>Afin de finaliser votre inscription en tant que bénévole un e-mail de confirmation a été envoyer à l'adresse mail que vous avez indiquer.</p>
+        <p>Veuillez cliquer sur le lien fournit avec le mail afin de valider votre inscription.</p>
+        <p>(Si vous ne recevez aucun mail <a href="#">Cliquer ici</a>)</p>
+    </fieldset>    
+
+    <input type="submit" value="Envoyer"/>
+
+  <!-- Pour prog
+    <label for="scales">Scales</label>
     Case à cocher :
     <input type="checkbox" name="checkbox_1" checked="checked" />
     <input type="checkbox" name="checkbox_2" />
@@ -115,7 +213,7 @@
     <input type="submit" value="Envoyer" /><br />
  
     Bouton de réinitialisation :
-    <input type="reset" value="Rétablir" />
+    <input type="reset" value="Rétablir" /> -->
 </form>
 
 </body>
