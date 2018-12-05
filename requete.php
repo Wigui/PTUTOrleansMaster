@@ -31,9 +31,14 @@ echo'<table style="border:1px solid black;" ><tr>
 <th>Heures Dispo</th>
 <th>Supprimer</th>
 </tr>';
-
-
+$clubs = array();
+$j=0;
+$double=false;
 while ($tab = $req->fetch()) {
+
+	
+
+	
 	echo '<tr>';
 	echo '<td>'.$tab['idPerso'].'</td>
 	<td>'.$tab['prenom'].'</td>
@@ -49,6 +54,7 @@ while ($tab = $req->fetch()) {
 
 }
 echo'</table>';
+
 echo'<script type="text/javascript">
 	$var=document.getElementById("varpass").value;
 	console.log($var);
@@ -56,7 +62,7 @@ echo'<script type="text/javascript">
 if (isset($_POST['supprimer'])) {
 	$id=$tab['idPerso'];
 	echo $id;
-	$supprSQL=$bdd->prepare('DELETE FROM `infoperso` WHERE idPerso=$');
+	$supprSQL=$bdd->prepare('DELETE * FROM `.infoperso.` WHERE idPerso=$id');
 	$supprSQL->execute();
 	exit;
 }
@@ -67,7 +73,8 @@ echo $pop;
 // foreach ($tab as $key => $value) {
 // 	echo $value;
 // }
-	
+
+//SELECT * from 'infoperso' WHERE idPerso=$id.
 
 
 
