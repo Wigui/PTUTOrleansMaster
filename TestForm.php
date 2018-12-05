@@ -12,7 +12,7 @@
 
 <h1>Ceci est un test !</h1>
 
-<form method="POST" action="test.php" enctype="multipart/form-data">
+<form method="POST" action="TestForm.php" enctype="multipart/form-data">
 
     <fieldset>
         <legend>Questions Préléminaires : </legend>
@@ -43,11 +43,7 @@
         <input type="text" name="prenom"/>
         <br/><br/>
         <p>Date de Naissance : </p>
-        <input type="text" name="jourNai"/>
-        <p>Jour</p>
-        <input type="text" name="moisNai"/>
-        <p>Mois</p>
-        <input type="text" name="anneeNai"/>
+        <input type="text" name="age"/>
         <p>Année</p>
         <br/><br/>
         <p>Mail : </p>
@@ -134,35 +130,35 @@
     <fieldset>
         <legend>Mes disponibilités :</legend>
         <p>Veuillez rentrer vos disponibilités :</p>
-        <label for="mardMat">Mardi : matin (8h-15h)</label>
-        <input type="checkbox" name="mardMat" value="mardMat"/>
-        <label for="mardAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="mardAprem" value="mardAprem"/>
+        <label for="marMat">Mardi : matin (8h-15h)</label>
+        <input type="checkbox" name="horaire[]" value="mardMat"/>
+        <label for="marAprem">après-midi (15h-22h)</label>
+        <input type="checkbox" name="horaire[]" value="mardAprem"/>
         <br/><br/>
         <label for="merMat">Mercredi : matin (8h-15h)</label>
-        <input type="checkbox" name="merMat" value="merMat"/>
+        <input type="checkbox" name="horaire[]" value="merMat"/>
         <label for="merAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="merAprem" value="merAprem"/>
+        <input type="checkbox" name="horaire[]" value="merAprem"/>
         <br/><br/>
         <label for="jeuMat">Jeudi : matin (8h-15h)</label>
-        <input type="checkbox" name="jeuMat" value="jeuMat"/>
+        <input type="checkbox" name="horaire[]" value="jeuMat"/>
         <label for="jeuAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="jeuAprem" value="jeuAprem"/>
+        <input type="checkbox" name="horaire[]" value="jeuAprem"/>
         <br/><br/>
         <label for="venMat">Vendredi : matin (8h-15h)</label>
-        <input type="checkbox" name="venMat" value="venMat"/>
+        <input type="checkbox" name="horaire[]" value="venMat"/>
         <label for="venAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="venAprem" value="venAprem"/>
+        <input type="checkbox" name="horaire[]" value="venAprem"/>
         <br/><br/>
         <label for="samMat">Samedi : matin (8h-15h)</label>
-        <input type="checkbox" name="samMat" value="samMat"/>
+        <input type="checkbox" name="horaire[]" value="samMat"/>
         <label for="samAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="samAprem" value="samAprem"/>
+        <input type="checkbox" name="horaire[]" value="samAprem"/>
         <br/><br/>
         <label for="dimMat">Dimanche : matin (8h-15h)</label>
-        <input type="checkbox" name="dimMat" value="dimMat"/>
+        <input type="checkbox" name="horaire[]" value="dimMat"/>
         <label for="dimAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="dimAprem" value="dimAprem"/>
+        <input type="checkbox" name="horaire[]" value="dimAprem"/>
         <br/>
     </fieldset>
 
@@ -214,7 +210,43 @@
  
     Bouton de réinitialisation :
     <input type="reset" value="Rétablir" /> -->
+
 </form>
 
 </body>
 </html>
+
+<?php
+//------------------------------------------------------PART GUILLAUME LESAGE-------------------------------------------------------
+function calculAge($age){
+    $res=date('Y')-$age;
+}
+$dejBene=$_POST['dejBene'];
+$licence=$_POST['licence'];
+$ouAvezVous=$_POST['textarea'];
+$reglement=$_POST['reglement']; //verif pour accepter l'inscription.
+$nom=$_POST['nom'];
+$prenom=$_POST['prenom'];
+$club=$_POST['club'];
+$age=@calculAge($_POST['age']);
+$mail=$_POST['mail'];
+$numeroTel=$_POST['numeroTel'];
+$club=$_POST['club'];
+$tshirt=$_POST['t-shirt'];
+$lang1=$_POST['lang1'];
+$lang2=$_POST['lang2'];
+$lang3=$_POST['lang3'];
+$post1=$_POST['post1'];
+$post2=$_POST['post2'];
+$post3=$_POST['post3'];
+foreach($_POST['horaire'] as $valeur)
+{
+    echo $valeur;    
+}
+
+
+
+
+
+
+?>
