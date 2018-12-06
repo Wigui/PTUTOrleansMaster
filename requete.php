@@ -66,7 +66,7 @@ if (isset($_POST['supprimer'])) {
 	$supprSQL->execute();
 	exit;
 }
-echo $pop;
+
 // $tab=$req->fetch(PDO::FETCH_ASSOC);
 // print_r($tab)
 
@@ -78,9 +78,14 @@ echo $pop;
 
 
 
+	$p1=new Perso('paul','Orc');
+	$p1->affichePersonnage();
+
 ?>
 <script type="text/javascript">
 	$var=document.getElementById(varpass);
 	console.log($var);
+	var variableRecuperee = <?php echo json_encode($p1); ?>;
+	alert (variableRecuperee);
 </script>
 

@@ -7,6 +7,15 @@
     <title>Test Formulaire</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="css/remodal-default-theme.css">
+    <link rel="stylesheet" href="css/remodal.css">
+
 </head>
 <body>
 
@@ -239,9 +248,11 @@ $lang3=$_POST['lang3'];
 $post1=$_POST['post1'];
 $post2=$_POST['post2'];
 $post3=$_POST['post3'];
+$i=0;
 foreach($_POST['horaire'] as $valeur)
 {
-    echo $valeur;    
+    echo $i;
+    $i++;
 }
 
 
@@ -250,3 +261,8 @@ foreach($_POST['horaire'] as $valeur)
 
 
 ?>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.owl.carousel.js"></script>
+<script src="js/remodal.js"></script>
+<script src="js/autosize.js"></script>
+<script src="js/app.js"></script>
