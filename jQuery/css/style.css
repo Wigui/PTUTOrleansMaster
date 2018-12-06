@@ -1,0 +1,105 @@
+:root{ font-size : 16px; line-height : 1.6; color : #444; font-family : 'Roboto Condensed', sans-serif }
+
+*, :after, :before{ -webkit-box-sizing : border-box; box-sizing : border-box }
+
+main{ padding : 1em 0 }
+
+body, html{ height : 100% }
+
+.layout{ min-height : 100%; display : -webkit-box; display : -webkit-flex; display : -ms-flexbox; display : flex; -webkit-box-orient : vertical; -webkit-box-direction : normal; -webkit-flex-direction : column; -ms-flex-direction : column; flex-direction : column }
+
+.layout main{ -webkit-box-flex : 1; -webkit-flex : 1 1 auto; -ms-flex : 1 1 auto; flex : 1 1 auto }
+
+.wrapper{ width : 1110px; max-width : calc(100% - 2em); margin : 0 auto }
+
+.img-responsive{ width : 100%; height : auto }
+
+header[role]{ background-image : -webkit-linear-gradient(330deg, #a6c0fe 0%, #f68084 100%); background-image : -o-linear-gradient(330deg, #a6c0fe 0%, #f68084 100%); background-image : linear-gradient(120deg, #a6c0fe 0%, #f68084 100%); -webkit-animation-duration : 1s; animation-duration : 1s; -webkit-animation-fill-mode : both; animation-fill-mode : both; -webkit-animation-delay : .4s; animation-delay : .4s; -webkit-animation-name : fadeInUp; animation-name : fadeInUp }
+
+header[role] > .wrapper{ padding : 1em 0 }
+
+.logo{ font-size : calc(2em + 1.5vw); text-align : center; font-family : 'Roboto Mono', monospace; line-height : 1.2; margin : 1rem; color : #fff; text-shadow : 0.1em 0.1em rgba(0, 0, 0, 0.2) }
+
+.logo a{ color : inherit; text-decoration : none }
+
+nav[role]{ background : rgba(34, 34, 34, 0.2) }
+
+nav[role] ul{ margin : 0; padding : 0; list-style : none; display : -webkit-box; display : -webkit-flex; display : -ms-flexbox; display : flex; -webkit-box-pack : center; -webkit-justify-content : center; -ms-flex-pack : center; justify-content : center }
+
+nav[role] li{ -webkit-box-flex : 1; -webkit-flex : 1 1 auto; -ms-flex : 1 1 auto; flex : 1 1 auto; text-align : center }
+
+nav[role] a{ display : block; color : #fff; font-size : 1.2em; padding : .5em .4em; text-decoration : none }
+
+nav[role] a:focus, nav[role] a:hover{ background : rgba(0, 0, 0, 0.1) }
+
+nav[role] a.active{ color : rgba(0, 0, 0, 0.34); text-shadow : 1px 1px 1px rgba(255, 255, 255, 0.25) }
+
+.slider img + img{ display : none }
+
+.galerie{ margin : 0 -0.5em; display : -webkit-box; display : -webkit-flex; display : -ms-flexbox; display : flex; -webkit-flex-wrap : wrap; -ms-flex-wrap : wrap; flex-wrap : wrap }
+
+.galerie .filtered{ position : absolute; top : -9999px; left : -9999px; -webkit-transform : scale(0); -ms-transform : scale(0); transform : scale(0) }
+
+.galerie > div{ -webkit-box-flex : 0; -webkit-flex : 0 1 25%; -ms-flex : 0 1 25%; flex : 0 1 25%; padding : .5em; -webkit-transform : scale(1); -ms-transform : scale(1); transform : scale(1); -webkit-transition : -webkit-transform .3s; transition : -webkit-transform .3s; -o-transition : transform .3s; transition : transform .3s; transition : transform .3s, -webkit-transform .3s }
+
+.galerie > div:nth-child(3n - 2){ -webkit-transition : -webkit-transform .3s .3s; transition : -webkit-transform .3s .3s; -o-transition : transform .3s .3s; transition : transform .3s .3s; transition : transform .3s .3s, -webkit-transform .3s .3s }
+
+.galerie > div:nth-child(3n - 1){ -webkit-transition : -webkit-transform .3s .15s; transition : -webkit-transform .3s .15s; -o-transition : transform .3s .15s; transition : transform .3s .15s; transition : transform .3s .15s, -webkit-transform .3s .15s }
+
+.galerie a{ display : block; position : relative; overflow : hidden; line-height : 0; background : #eee; -webkit-transition : 0.133s ease-in-out; -o-transition : 0.133s ease-in-out; transition : 0.133s ease-in-out; width : 100%; height : 0; padding-bottom : 75.143% }
+
+.galerie a:after, .galerie a:before{ position : absolute; top : 0; left : 0; width : 100%; height : 100%; -webkit-transition : inherit; -o-transition : inherit; transition : inherit }
+
+.galerie a:before{ content : ""; background : #000; opacity : 0 }
+
+.galerie a:after{ content : "\f002"; font-size : 3em; color : #fff; display : -webkit-box; display : -webkit-flex; display : -ms-flexbox; display : flex; -webkit-box-align : center; -webkit-align-items : center; -ms-flex-align : center; align-items : center; -webkit-box-pack : center; -webkit-justify-content : center; -ms-flex-pack : center; justify-content : center; font-family : FontAwesome; -webkit-transform : translateY(50%); -ms-transform : translateY(50%); transform : translateY(50%); opacity : 0 }
+
+.galerie a:hover{ -webkit-box-shadow : 0 10px 45px rgba(0, 0, 0, 0.1); box-shadow : 0 10px 45px rgba(0, 0, 0, 0.1) }
+
+.galerie a:hover:before{ opacity : .4 }
+
+.galerie a:hover:after{ opacity : 1; -webkit-transform : translateY(0); -ms-transform : translateY(0); transform : translateY(0) }
+
+.galerie img{ z-index : 1; -webkit-transition : inherit; -o-transition : inherit; transition : inherit; -webkit-backface-visibility : hidden; backface-visibility : hidden; position : absolute; top : 0; left : 0; width : 100%; height : 100% }
+
+.galerie img:hover{ -webkit-transform : scale(1.1) rotate(1deg); -ms-transform : scale(1.1) rotate(1deg); transform : scale(1.1) rotate(1deg) }
+
+.galerie img.lazyloaded{ -webkit-animation-duration : 1s; animation-duration : 1s; -webkit-animation-fill-mode : both; animation-fill-mode : both; -webkit-animation-delay : .4s; animation-delay : .4s; -webkit-animation-name : fadeInUp; animation-name : fadeInUp }
+
+.galerie img:not(.lazyloaded){ opacity : 0 }
+
+.loader{ display : block; position : absolute; top : 0; left : 0; width : 100%; height : 100%; z-index : -1 }
+
+h1{ font-family : 'Roboto Mono', monospace; margin : 0 0 1rem 0 }
+
+h2{ border-left : .3em solid #444; background : #eee; font-size : 1.2em; padding : .2em .5em; margin : 1rem 0 }
+
+.social{ width : 1.5em; height : 1.5em; font-size : 1.4em; border : 1px solid currentColor; border-radius : 50%; display : -webkit-box; display : -webkit-flex; display : -ms-flexbox; display : flex; -webkit-box-align : center; -webkit-align-items : center; -ms-flex-align : center; align-items : center; -webkit-box-pack : center; -webkit-justify-content : center; -ms-flex-pack : center; justify-content : center; color : #444; margin : .2em }
+
+.social a{ color : inherit }
+
+.social:focus, .social:hover{ background : #fff; color : #000 }
+
+footer{ background : #eee }
+
+footer ul{ margin : 0; list-style : none; padding : 0; display : -webkit-box; display : -webkit-flex; display : -ms-flexbox; display : flex; -webkit-box-align : center; -webkit-align-items : center; -ms-flex-align : center; align-items : center; -webkit-box-pack : center; -webkit-justify-content : center; -ms-flex-pack : center; justify-content : center }
+
+footer .wrapper{ padding : 1em 0 }
+
+form{ text-align : left }
+
+.form-group{ margin-bottom : 1em; display : block }
+
+label{ display : block }
+
+.form-control{ display : block; width : 100%; padding : .25em .4em; resize : vertical }
+
+@-webkit-keyframes fadeInUp{
+	0%{ opacity : 0; -webkit-transform : translateY(-2em); transform : translateY(-2em) }
+	to{ opacity : 1; -webkit-transform : translateY(0); transform : translateY(0) }
+}
+
+@keyframes fadeInUp{
+	0%{ opacity : 0; -webkit-transform : translateY(-2em); transform : translateY(-2em) }
+	to{ opacity : 1; -webkit-transform : translateY(0); transform : translateY(0) }
+}
