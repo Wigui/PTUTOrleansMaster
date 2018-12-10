@@ -21,7 +21,7 @@
 
 <h1>Ceci est un test !</h1>
 
-<form method="POST" action="TestForm.php" enctype="multipart/form-data">
+<form method="POST" action="recupEtInsert.php" enctype="multipart/form-data">
 
     <fieldset>
         <legend>Questions Préléminaires : </legend>
@@ -225,92 +225,7 @@
 </body>
 </html>
 
-<?php
-//------------------------------------------------------PART GUILLAUME LESAGE-------------------------------------------------------
-function calculAge($age){
-    $res=date('Y')-$age;
-}
-$dejBene=$_POST['dejBene'];
-$licence=$_POST['licence'];
-$AvezVous=$_POST['textarea'];
-$reglement=$_POST['reglement']; //verif pour Guillaume Laurent: coder toute les verif de champs (tu les trouve sur le net facilement)
 
-$nom=$_POST['nom'];
-$prenom=$_POST['prenom'];
-$club=$_POST['club'];
-$age=@calculAge($_POST['age']);
-$mail=$_POST['mail'];
-$numeroTel=$_POST['numeroTel'];
-
-$tShirt=$_POST['t-shirt'];
-$lang1=$_POST['lang1'];
-$lang2=$_POST['lang2'];
-$lang3=$_POST['lang3'];
-$post1=$_POST['post1'];
-$post2=$_POST['post2'];
-$post3=$_POST['post3'];
-$dispo='jour: ';
-foreach ($_POST['horaire'] as $value) {
-    
-    $dispo=$dispo.':'.$value;
-
-}
-echo $dispo.'<br>';
-$tablo = array(
-"marMat"=>0,
-"marAprem"=>0,
-"merMat"=>0,
-"merAprem"=>0,
-"jeuMat"=>0,
-"jeuAprem"=>0,
-"venMat"=>0,
-"venAprem"=>0,
-"samMat"=>0,
-"samAprem"=>0,
-"dimMat"=>0,
-"dimAprem"=>0);
-print_r($tablo);
-echo '<br>';
-$nbDeDispo=0;
-foreach($tablo as $key=>$value){
-    if(stristr($dispo,$key)){
-        $tablo[$key]=1;
-        $nbDeDispo+=1;
-    }
-}
-print_r($tablo);
-foreach ($tablo as $key=>$value) {
-    ${$key}=$value;
-
-}
-echo "<br><br>".$marMat."<br>";
-$bdd = new PDO('mysql:host=localhost;dbname=v1;charset=utf8','root','root');
-$req=$bdd->prepare('INSERT INTO infoperso(dejBene,licence,textarea,reglement,nom,prenom,club,age,mail,numeroTel,tShirt,lang1,lang2,lang3,post1,post2,post3,marMat,marAprem,merMat,merAprem,jeuMat,jeuAprem,venMat,venAprem,samMat,samAprem,dimMat,dimAprem) VALUES (:dejBene,:licence,:textarea,:reglement,:nom,:prenom,:club,:age,:mail,:numeroTel,:tShirt,:lang1,:lang2,:lang3,:post1,:post2,:post3,:marMat,:marAprem,:merMat,:merAprem,:jeuMat,:jeuAprem,:venMat,:venAprem,:samMat,:samAprem,:dimMat,:dimAprem)');
-$req->execute(array(  
-    'dejBene'=>$dejBene,
-    'licence'=>$prenom,
-    'textarea'=>$textarea,
-    'reglement'=>$reglement
-    //FINIR ICICICICICICICICCICICICICICIC
-    'club'=>$club,
-  'poste1'=>$poste1,
-  'poste2'=>$poste2,
-  'poste3'=>$poste3,
-  'joursDispo'=>$joursDispo,
-  'heuresDispo'=>$heuresDispo,
-  ));
-
-
-//liste des condition : 
-//plus de 1 checkbox cochée (j'ai crée une var: nbDeDispo ligne 274)
-//email correct
-//tout les champ sont remplie
-//les champ ne contiennent pas de balise html ou php
-
-
-
-
-?>
 <script src="js/jquery.js"></script>
 <script src="js/jquery.owl.carousel.js"></script>
 <script src="js/remodal.js"></script>
