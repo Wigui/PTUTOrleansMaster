@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.5.4.1
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Sam 20 Octobre 2018 à 16:19
--- Version du serveur :  5.6.20-log
--- Version de PHP :  5.4.31
+-- Généré le :  Jeu 13 Décembre 2018 à 13:12
+-- Version du serveur :  5.7.11
+-- Version de PHP :  5.6.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données :  `v1`
@@ -23,101 +23,80 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `horaire`
---
-
-CREATE TABLE IF NOT EXISTS `horaire` (
-`IdHoraire` int(11) NOT NULL,
-  `KeyInfoPerso` int(11) NOT NULL,
-  `9h-12h` tinyint(1) NOT NULL,
-  `13h-17h` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `infoperso`
 --
 
-CREATE TABLE IF NOT EXISTS `infoperso` (
-`IdInfo` int(11) NOT NULL,
-  `Nom` varchar(255) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+CREATE TABLE `infoperso` (
+  `idPerso` int(11) NOT NULL,
+  `dejBene` tinyint(1) NOT NULL DEFAULT '0',
+  `licence` tinyint(1) NOT NULL DEFAULT '0',
+  `textarea` varchar(512) NOT NULL,
+  `reglement` tinyint(1) NOT NULL DEFAULT '0',
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `club` varchar(255) NOT NULL,
+  `age` int(11) NOT NULL,
+  `mail` varchar(255) NOT NULL,
+  `numeroTel` varchar(255) NOT NULL,
+  `tShirt` varchar(8) NOT NULL,
+  `lang1` varchar(255) NOT NULL,
+  `lang2` varchar(255) NOT NULL,
+  `lang3` varchar(255) NOT NULL,
+  `poste1` varchar(255) NOT NULL,
+  `poste2` varchar(255) NOT NULL,
+  `poste3` varchar(255) NOT NULL,
+  `marMat` tinyint(1) NOT NULL DEFAULT '0',
+  `marAprem` tinyint(1) NOT NULL DEFAULT '0',
+  `merMat` tinyint(1) NOT NULL DEFAULT '0',
+  `merArem` tinyint(1) NOT NULL DEFAULT '0',
+  `jeuMat` tinyint(1) NOT NULL DEFAULT '0',
+  `jeuAprem` tinyint(1) NOT NULL DEFAULT '0',
+  `venMat` tinyint(1) NOT NULL DEFAULT '0',
+  `venAprem` tinyint(1) NOT NULL DEFAULT '0',
+  `samMat` tinyint(1) NOT NULL DEFAULT '0',
+  `samAprem` tinyint(1) NOT NULL DEFAULT '0',
+  `dimMat` tinyint(1) NOT NULL DEFAULT '0',
+  `dimAprem` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `infoperso`
 --
 
-INSERT INTO `infoperso` (`IdInfo`, `Nom`) VALUES
-(1, 'Bob'),
-(2, 'Marie'),
-(3, 'Julien'),
-(4, 'Charle');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `poste`
---
-
-CREATE TABLE IF NOT EXISTS `poste` (
-`IdPoste` int(11) NOT NULL,
-  `KeyPoste` int(11) NOT NULL,
-  `Choix 1` varchar(255) NOT NULL,
-  `Choix 2` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+INSERT INTO `infoperso` (`idPerso`, `dejBene`, `licence`, `textarea`, `reglement`, `nom`, `prenom`, `club`, `age`, `mail`, `numeroTel`, `tShirt`, `lang1`, `lang2`, `lang3`, `poste1`, `poste2`, `poste3`, `marMat`, `marAprem`, `merMat`, `merArem`, `jeuMat`, `jeuAprem`, `venMat`, `venAprem`, `samMat`, `samAprem`, `dimMat`, `dimAprem`) VALUES
+(5, 1, 1, '', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(6, 1, 1, '', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(7, 1, 1, '', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(8, 1, 1, '', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(9, 1, 1, 'ssgsxgxsg', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(10, 1, 1, 'ssgsxgxsg', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(11, 1, 1, 'ssgsxgxsg', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(12, 1, 1, 'ssgsxgxsg', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(13, 1, 1, 'ssgsxgxsg', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(14, 1, 1, 'ssgsxgxsg', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(15, 1, 1, 'ssgsxgxsg', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(16, 1, 1, 'ssgsxgxsg', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(17, 1, 1, 'ssgsxgxsg', 1, '', '', '', 20, '', '', '', '', '', '', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0);
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `horaire`
---
-ALTER TABLE `horaire`
- ADD PRIMARY KEY (`IdHoraire`);
-
---
 -- Index pour la table `infoperso`
 --
 ALTER TABLE `infoperso`
- ADD PRIMARY KEY (`IdInfo`);
-
---
--- Index pour la table `poste`
---
-ALTER TABLE `poste`
- ADD PRIMARY KEY (`IdPoste`), ADD KEY `KeyPoste` (`KeyPoste`);
+  ADD PRIMARY KEY (`idPerso`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
 --
 
 --
--- AUTO_INCREMENT pour la table `horaire`
---
-ALTER TABLE `horaire`
-MODIFY `IdHoraire` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT pour la table `infoperso`
 --
 ALTER TABLE `infoperso`
-MODIFY `IdInfo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT pour la table `poste`
---
-ALTER TABLE `poste`
-MODIFY `IdPoste` int(11) NOT NULL AUTO_INCREMENT;
---
--- Contraintes pour les tables exportées
---
-
---
--- Contraintes pour la table `poste`
---
-ALTER TABLE `poste`
-ADD CONSTRAINT `Poste-Id` FOREIGN KEY (`KeyPoste`) REFERENCES `poste` (`IdPoste`);
-
+  MODIFY `idPerso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
