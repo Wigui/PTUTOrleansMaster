@@ -102,6 +102,7 @@
         <legend>Mon poste :</legend>
         <p>Choix n°1 :</p>
         <select name="post1">
+            <option value="pasdDepref">Pas de Préference</option>
             <option value="info">Informatique</option>
             <option value="plateau">Plateau</option>
             <option value="com">Communication</option>
@@ -113,6 +114,7 @@
         <br/>
         <p>Choix n°2 :</p>
         <select name="post2">
+            <option value="pasdDepref">Pas de Préference</option>
             <option value="info">Informatique</option>
             <option value="plateau">Plateau</option>
             <option value="com">Communication</option>
@@ -124,6 +126,7 @@
         <br/>
         <p>Choix n°3 :</p>
         <select name="post3">
+            <option value="pasdDepref">Pas de Préference</option>
             <option value="info">Informatique</option>
             <option value="plateau">Plateau</option>
             <option value="com">Communication</option>
