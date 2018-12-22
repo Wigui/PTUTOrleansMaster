@@ -3,185 +3,261 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Test Formulaire</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="css/normalize.css">
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.default.css">
-    <link rel="stylesheet" href="css/remodal-default-theme.css">
-    <link rel="stylesheet" href="css/remodal.css">
-
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/css/mdb.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">   
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
-<h1>Ceci est un test !</h1>
-
-<form method="POST" action="recupEtInsert.php" enctype="multipart/form-data">
-
-    <fieldset>
-        <legend>Questions Préléminaires : </legend>
-        <p>Avez vous déjà bénévole pour cet évènement ? </p>
-        <label for="dejBene">Oui</label>
-        <input type="radio" name="dejBene" checked="checked" value="Oui"/>
-        <label for="dejBene">Non</label>
-        <input type="radio" name="dejBene" value="Non"/><br/>
-        <p>Êtes-vous licencié(e) à la FFBAD ou autre Fédération Nationale de Badminton ?</p>
-        <label for="licence">Oui</label>
-        <input type="radio" name="licence" checked="checked" value="Oui"/>
-        <label for="licence">Non</label>
-        <input type="radio" name="licence" value="Non"/><br/>
-        <p>Par quel(s) moyen savez-vous entendue parler de cet évènement?<br/>(Indiquer votre réponse dans la zone de texte ci-dessous)</p>
-        <textarea name="textarea" cols="70" rows="7"></textarea><br/>
-        <p>Acceptez-vous le règlement de cette inscription en tant que bénévoles ?</p>
-        <label for="reglement">Oui</label>
-        <input type="radio" name="reglement" checked="checked" value="Oui"/>
-        <label for="reglement">Non</label>
-        <input type="radio" name="reglement" value="Non"/>
-    </fieldset>
-
-    <fieldset>
-        <legend>Mes Informations personnelles : </legend>
-        <p>Nom : </p>
-        <input type="text" name="nom"/><br/>
-        <p>Prénom :</p>
-        <input type="text" name="prenom"/>
-        <br/><br/>
-        <p>Date de Naissance : </p>
-        <input type="text" name="age"/>
-        <p>Année</p>
-        <br/><br/>
-        <p>Mail : </p>
-        <input type="text" name="mail"/>
-        <p>Numéro de Téléphone : </p>
-        <input type="text" name="numeroTel"/>
-        <p>Club : </p>
-        <input type="text" name="club"/>
-        <p>Taille de T-Shirt :</p>
-        <select name="t-shirt">
-            <option value="tailleS">S</option>
-            <option value="tailleM">M</option>
-            <option value="tailleL">L</option>
-            <option value="tailleXL">XL</option>
-            <option value="tailleXXL">XXL</option>
-            <option value="tailleXXXL">XXXL</option>
-        </select><br/><br/>
-        <p>Langue étrangères : (3 maximum)</p>
-        <select name="lang1">
-            <option value="aucune">Aucune</option>
-            <option value="anglais">Anglais</option>
-            <option value="allemand">Allemand</option>
-            <option value="arabe">Arabe</option>
-            <option value="mandarin">Mandarin</option>
-            <option value="espagnole">Espagnole</option>
-        </select>
-        <select name="lang2">
-            <option value="aucune">Aucune</option>
-            <option value="anglais">Anglais</option>
-            <option value="allemand">Allemand</option>
-            <option value="arabe">Arabe</option>
-            <option value="mandarin">Mandarin</option>
-            <option value="espagnole">Espagnole</option>
-        </select>
-        <select name="lang3">
-            <option value="aucune">Aucune</option>
-            <option value="anglais">Anglais</option>
-            <option value="allemand">Allemand</option>
-            <option value="arabe">Arabe</option>
-            <option value="mandarin">Mandarin</option>
-            <option value="espagnole">Espagnole</option>
-        </select><br/><br/>
-        <!-- <input type="button" value="Ajouter Une langue"/><br /> -->
-    </fieldset>
-
-    <fieldset>
-        <legend>Mon poste :</legend>
-        <p>Choix n°1 :</p>
-        <select name="post1">
-            <option value="pasdDepref">Pas de Préference</option>
-            <option value="info">Informatique</option>
-            <option value="plateau">Plateau</option>
-            <option value="com">Communication</option>
-            <option value="buvette">Buvette</option>
-            <option value="gestJoueurs">Gestion des joueurs</option>
-            <option value="officielsTech">Officiel Technique</option>
-            <option value="restBene">Restaurant bénévole</option>
-        </select>
-        <br/>
-        <p>Choix n°2 :</p>
-        <select name="post2">
-            <option value="pasdDepref">Pas de Préference</option>
-            <option value="info">Informatique</option>
-            <option value="plateau">Plateau</option>
-            <option value="com">Communication</option>
-            <option value="buvette">Buvette</option>
-            <option value="gestJoueurs">Gestion des joueurs</option>
-            <option value="officielsTech">Officiel Technique</option>
-            <option value="restBene">Restaurant bénévole</option>
-        </select>
-        <br/>
-        <p>Choix n°3 :</p>
-        <select name="post3">
-            <option value="pasdDepref">Pas de Préference</option>
-            <option value="info">Informatique</option>
-            <option value="plateau">Plateau</option>
-            <option value="com">Communication</option>
-            <option value="buvette">Buvette</option>
-            <option value="gestJoueurs">Gestion des joueurs</option>
-            <option value="officielsTech">Officiel Technique</option>
-            <option value="restBene">Restaurant bénévole</option>
-        </select>
-        <br/>
-        <p>Informations sur les postes à compléter</p>
-    </fieldset>
-
-    <fieldset>
-        <legend>Mes disponibilités :</legend>
-        <p>Veuillez rentrer vos disponibilités :</p>
-        <label for="marMat">Mardi : matin (8h-15h)</label>
-        <input type="checkbox" name="horaire[]" value="marMat"/>
-        <label for="marAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="horaire[]" value="marAprem"/>
-        <br/><br/>
-        <label for="merMat">Mercredi : matin (8h-15h)</label>
-        <input type="checkbox" name="horaire[]" value="merMat"/>
-        <label for="merAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="horaire[]" value="merAprem"/>
-        <br/><br/>
-        <label for="jeuMat">Jeudi : matin (8h-15h)</label>
-        <input type="checkbox" name="horaire[]" value="jeuMat"/>
-        <label for="jeuAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="horaire[]" value="jeuAprem"/>
-        <br/><br/>
-        <label for="venMat">Vendredi : matin (8h-15h)</label>
-        <input type="checkbox" name="horaire[]" value="venMat"/>
-        <label for="venAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="horaire[]" value="venAprem"/>
-        <br/><br/>
-        <label for="samMat">Samedi : matin (8h-15h)</label>
-        <input type="checkbox" name="horaire[]" value="samMat"/>
-        <label for="samAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="horaire[]" value="samAprem"/>
-        <br/><br/>
-        <label for="dimMat">Dimanche : matin (8h-15h)</label>
-        <input type="checkbox" name="horaire[]" value="dimMat"/>
-        <label for="dimAprem">après-midi (15h-22h)</label>
-        <input type="checkbox" name="horaire[]" value="dimAprem"/>
-        <br/>
-    </fieldset>
-
-    <fieldset>
-        <legend>Mail récapitulatif :</legend>
-        <p>Afin de finaliser votre inscription en tant que bénévole un e-mail de confirmation a été envoyer à l'adresse mail que vous avez indiquer.</p>
-        <p>Veuillez cliquer sur le lien fournit avec le mail afin de valider votre inscription.</p>
-        <p>(Si vous ne recevez aucun mail <a href="#">Cliquer ici</a>)</p>
-    </fieldset>    
-
-    <input type="submit" value="Envoyer"/>
+    <header>
+        <h3>Formulaire d'inscription bénévole</h3>
+    </header>
+    <div class="container-12" class="centered" id="formContainer">
+        <div class="row" class="centered">
+            <div class="col-lg-5" class="col-xs-11" class="centered"  class="custom-control custom-checkbox custom-control-inline">
+                <form method="POST" action="recupEtInsert.php" enctype="multipart/form-data">
+                    <fieldset class="card">
+                        <h4>Questions Préléminaires : </h4>
+                        <div class="decal">
+                            <p>Avez vous déjà été bénévole pour cet évènement ?</p>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input name="dejBene" value="Oui" type="radio" class="custom-control-input" id="defaultChecked"/>
+                                <label class="custom-control-label" for="defaultChecked">oui</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input name="dejBene" value="Non" type="radio" class="custom-control-input" id="defaultUnchecked"/>
+                                <label class="custom-control-label" for="defaultUnchecked">Non</label>
+                            </div>
+                            <br/><br/>    
+                            <p>Êtes-vous licencié(e) à la FFBAD ou autre Fédération Nationale de Badminton ?</p>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input name="licence" value="Oui" type="radio" class="custom-control-input" id="defaultChecked1"/>
+                                <label class="custom-control-label" for="defaultChecked1">oui</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input name="licence" value="Non" type="radio" class="custom-control-input" id="defaultUnchecked1"/>
+                                <label class="custom-control-label" for="defaultUnchecked1">Non</label>
+                            </div>
+                            <br/><br/> 
+                            <div class="md-form mb-4 pink-textarea active-pink-textarea">
+    							<textarea name="textarea" type="text" id="form18" class="md-textarea form-control" rows="1"></textarea>
+    							<label for="form18">Par quel(s) moyen avez-vous entendu parlé de cet évènement?<br>(Cliquer pour répondre)</label>
+    						</div>
+                            <p>Acceptez-vous le règlement de cette inscription en tant que bénévoles ?</p>
+                            <div class="custom-control custom-radio custom-control-inline"> 
+                                <input type="radio" name="reglement" value="Oui" class="custom-control-input" id="defaultChecked2"/>
+                                <label class="custom-control-label" for="defaultChecked2">Oui</label>  
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" name="reglement" value="Non" class="custom-control-input" id="defaultUnchecked2"/>
+                                <label class="custom-control-label" for="defaultUnchecked2">Non</label>
+                            </div>
+                        </div>
+                    </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+                    <fieldset class="card">
+                        <h4>Mes informations personnelles : </h4>
+                        <div class="decal">
+                            <div class="md-form mb-4 pink-textarea active-pink-textarea">
+                                <textarea name="nom" type="text" id="form18" class="md-textarea form-control" rows="1"></textarea>
+                                <label for="form18">Votre nom</label>
+                            </div>
+                            <div class="md-form mb-4 pink-textarea active-pink-textarea">
+                                <textarea name="prenom" type="text" id="form19" class="md-textarea form-control" rows="1"></textarea>
+                                <label for="form19">Votre prénom</label>
+                            </div>
+                            <div class="md-form mb-4 pink-textarea active-pink-textarea">
+                                <textarea name="age" type="text" id="form20" class="md-textarea form-control" rows="1"></textarea>
+                                <label for="form20">Votre année de naissance</label>
+                            </div>
+                            <div class="md-form mb-4 pink-textarea active-pink-textarea">
+                                <textarea name="mail" type="text" id="form21" class="md-textarea form-control" rows="1"></textarea>
+                                <label for="form21">Votre adresse mail</label>
+                            </div>
+                            <div class="md-form mb-4 pink-textarea active-pink-textarea">
+                                <textarea name="numeroTel" type="text" id="form22" class="md-textarea form-control" rows="1"></textarea>
+                                <label for="form22">Votre numéro de téléphone</label>
+                            </div>
+                            <div class="md-form mb-4 pink-textarea active-pink-textarea">
+                                <textarea name="club" type="text" id="form23" class="md-textarea form-control" rows="1"></textarea>
+                                <label for="form23">Votre club</label>
+                            </div>
+                        <p>Taille de T-Shirt :</p>
+                        <select name="t-shirt"  class="browser-default custom-select">
+                            <option value="tailleS">S</option>
+                            <option value="tailleM">M</option>
+                            <option value="tailleL">L</option>
+                            <option value="tailleXL">XL</option>
+                            <option value="tailleXXL">XXL</option>
+                            <option value="tailleXXXL">XXXL</option>
+                        </select><br/><br/>
+                        <p>Langues étrangères : (3 maximum)</p>
+                        <select name="lang1"  class="browser-default custom-select" class="col-lg-2">
+                            <option value="aucune">Aucune</option>
+                            <option value="anglais">Anglais</option>
+                            <option value="allemand">Allemand</option>
+                            <option value="arabe">Arabe</option>
+                            <option value="mandarin">Mandarin</option>
+                            <option value="espagnole">Espagnole</option>
+                        </select>
+                        <select name="lang2"  class="browser-default custom-select"> 
+                            <option value="aucune">Aucune</option>
+                            <option value="anglais">Anglais</option>
+                            <option value="allemand">Allemand</option>
+                            <option value="arabe">Arabe</option>
+                            <option value="mandarin">Mandarin</option>
+                            <option value="espagnole">Espagnole</option>
+                        </select>
+                        <select name="lang3"  class="browser-default custom-select">
+                            <option value="aucune">Aucune</option>
+                            <option value="anglais">Anglais</option>
+                            <option value="allemand">Allemand</option>
+                            <option value="arabe">Arabe</option>
+                            <option value="mandarin">Mandarin</option>
+                            <option value="espagnole">Espagnole</option>
+                        </select><br/><br/>
+                        <!-- <input type="button" value="Ajouter Une langue"/><br /> -->
+                    </div>
+                    </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+                    <fieldset class="card">
+                        <div class="decal">
+                            <h4>Mon poste :</h4><br/>
+                            <div class="decal">
+                                <p class="bold">Choix n°1 :</p>
+                                <select name="post1"  class="browser-default custom-select">
+                                    <option value="info">Informatique</option>
+                                    <option value="plateau">Plateau</option>
+                                    <option value="com">Communication</option>
+                                    <option value="buvette">Buvette</option>
+                                    <option value="gestJoueurs">Gestion des joueurs</option>
+                                    <option value="officielsTech">Officiel Technique</option>
+                                    <option value="restBene">Restaurant bénévole</option>
+                                </select>
+                                <br/><br/>
+                                <p class="bold">Choix n°2 :</p>
+                                <select name="post2"  class="browser-default custom-select">
+                                    <option value="info">Informatique</option>
+                                    <option value="plateau">Plateau</option>
+                                    <option value="com">Communication</option>
+                                    <option value="buvette">Buvette</option>
+                                    <option value="gestJoueurs">Gestion des joueurs</option>
+                                    <option value="officielsTech">Officiel Technique</option>
+                                    <option value="restBene">Restaurant bénévole</option>
+                                </select>
+                                <br/><br/>
+                                <p class="bold">Choix n°3 :</p>
+                                <select name="post3"  class="browser-default custom-select">
+                                    <option value="info">Informatique</option>
+                                    <option value="plateau">Plateau</option>
+                                    <option value="com">Communication</option>
+                                    <option value="buvette">Buvette</option>
+                                    <option value="gestJoueurs">Gestion des joueurs</option>
+                                    <option value="officielsTech">Officiel Technique</option>
+                                    <option value="restBene">Restaurant bénévole</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+                    <fieldset class="card">
+                        <h4>Mes disponibilités :</h4><br/>
+                        <div class="decal">
+                            <p class="bold"> Mardi : </p>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="marMat" type="checkbox" class="custom-control-input" id="defaultChecked3">
+                                <label class="custom-control-label" for="defaultChecked3">matin (8h-15h)</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="marAprem" type="checkbox" class="custom-control-input" id="defaultUnchecked3">
+                                <label class="custom-control-label" for="defaultUnchecked3">après-midi (15h-22h)</label>
+                            </div>
+                            <br/><br/>
+                            <p class="bold"> Mercredi : </p>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="merMat" type="checkbox" class="custom-control-input" id="defaultChecked4">
+                                <label class="custom-control-label" for="defaultChecked4">matin (8h-15h)</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="merAprem" type="checkbox" class="custom-control-input" id="defaultUnchecked4">
+                                <label class="custom-control-label" for="defaultUnchecked4">après-midi (15h-22h)</label>
+                            </div>
+                            <br/><br/>
+                            <p class="bold"> Jeudi : </p>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="jeuMat" type="checkbox" class="custom-control-input" id="defaultChecked5">
+                                <label class="custom-control-label" for="defaultChecked5">matin (8h-15h)</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="jeuAprem" type="checkbox" class="custom-control-input" id="defaultUnchecked5">
+                                <label class="custom-control-label" for="defaultUnchecked5">après-midi (15h-22h)</label>
+                            </div>
+                            <br/><br/>
+                            <p class="bold"> Vendredi : </p>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="venMat" type="checkbox" class="custom-control-input" id="defaultChecked6">
+                                <label class="custom-control-label" for="defaultChecked6">matin (8h-15h)</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="venAprem" type="checkbox" class="custom-control-input" id="defaultUnchecked6">
+                                <label class="custom-control-label" for="defaultUnchecked6">après-midi (15h-22h)</label>
+                            </div>
+                            <br/><br/>
+                            <p class="bold"> Samedi : </p>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="samMat" type="checkbox" class="custom-control-input" id="defaultChecked7">
+                                <label class="custom-control-label" for="defaultChecked7">matin (8h-15h)</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="samAprem" type="checkbox" class="custom-control-input" id="defaultUnchecked7">
+                                <label class="custom-control-label" for="defaultUnchecked7">après-midi (15h-22h)</label>
+                            </div>
+                            <br/><br/>
+                            <p class="bold"> Dimanche : </p>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="dimMat" type="checkbox" class="custom-control-input" id="defaultChecked8">
+                                <label class="custom-control-label" for="defaultChecked8">matin (8h-15h)</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="dimAprem" type="checkbox" class="custom-control-input" id="defaultUnchecked8">
+                                <label class="custom-control-label" for="defaultUnchecked8">après-midi (15h-22h)</label>
+                            </div>                        
+                            <br/><br/>
+                        </div>
+                    </fieldset>
+                    <div class="text-center">
+                        <br><button type="submit" value="Envoyer "class="btn btn-primary" >Envoyer !</button><br><br><br><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+<!--    <div class="row">
+            <div class="col-lg-5">
+                <form method="POST" action="recupEtInsert.php" enctype="multipart/form-data">
+                    <fieldset class="card">
+                        <h4>Mail récapitulatif :</h4>
+                        <div class="decal">
+                            <p>Afin de finaliser votre inscription en tant que bénévole, un e-mail de confirmation a été envoyé à l'adresse mail que vous avez indiqué.</p>
+                            <p>Veuillez cliquer sur le lien fourni avec le mail afin de valider votre inscription.</p>
+                            <p>(Si vous ne recevez aucun mail, veuillez <a href="#">cliquer ici</a>)</p>
+                        </div>
+                    </fieldset>
+                </form>   
+            </div>  
+        </div> 
+-->
 
   <!-- Pour prog
     <label for="scales">Scales</label>
@@ -224,13 +300,14 @@
     <input type="reset" value="Rétablir" /> -->
 
 </form>
-
+</div>
 </body>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/js/mdb.min.js"></script>
 </html>
-
-
-<script src="js/jquery.js"></script>
-<script src="js/jquery.owl.carousel.js"></script>
-<script src="js/remodal.js"></script>
-<script src="js/autosize.js"></script>
-<script src="js/app.js"></script>

@@ -1,4 +1,5 @@
 <?php
+var_dump($_POST);
 //------------------------------------------------------PART GUILLAUME LESAGE-------------------------------------------------------
 function calculAge($age){
     $res=date('Y')-$age;
@@ -95,7 +96,15 @@ foreach ($tablo as $key=>$value) {
     ${$key}=$value;
 }
 
-$bdd = new PDO('mysql:host=localhost;dbname=v1;charset=utf8','root','root');
+
+try{
+    $bdd = new PDO('mysql:host=localhost;dbname=v1;charset=utf8','root','root');
+    echo "BDD OK";
+}
+catch(Exception $e){
+    die('Erreur :'.$e->getMessage());
+}
+
 $query='SELECT COUNT(*) FROM ma_table WHERE nom = "$nom" AND prenom="$prenom"';
 $slut=$bdd->query($query);
 echo $slut; 
@@ -113,8 +122,5 @@ if($req2->execute()){
 //email correct
 //tout les champ sont remplie
 //les champ ne contiennent pas de balise html ou php
-
-
-
 
 ?>
