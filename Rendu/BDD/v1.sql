@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 25 Décembre 2018 à 19:00
+-- Généré le :  Sam 05 Janvier 2019 à 11:58
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -77,7 +77,7 @@ ALTER TABLE `infoperso`
 -- AUTO_INCREMENT pour la table `infoperso`
 --
 ALTER TABLE `infoperso`
-  MODIFY `idPerso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idPerso` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
