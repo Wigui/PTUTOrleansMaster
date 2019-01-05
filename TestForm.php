@@ -20,7 +20,7 @@
             <div class="col-lg-5" class="col-xs-11" class="centered"  class="custom-control custom-checkbox custom-control-inline">
                 <form method="POST" action="recupEtInsert.php" enctype="multipart/form-data">
                     <fieldset class="card">
-                        <h4>Questions Préléminaires : </h4>
+                        <h4>Questions Préliminaires : </h4>
                         <div class="decal">
                             <p>Avez vous déjà été bénévole pour cet évènement ?</p>
                             <div class="custom-control custom-radio custom-control-inline">

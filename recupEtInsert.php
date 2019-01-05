@@ -44,14 +44,14 @@ $mail_verif = '0';
 }};
 
 $numeroTel=$_POST['numeroTel'];
-if(preg_match('`[0-9]{10,14}`',$numeroTel))
-{
-  $numeroTel_verif='1';
-}
-else
-{
-  $numeroTel_verif='0';
-}
+// if(preg_match('[0-9]{10,14}',$numeroTel))
+// {
+//   $numeroTel_verif='1';
+// }
+// else
+// {
+//   $numeroTel_verif='0';
+// }
 $tShirt=$_POST['t-shirt'];
 $lang1=$_POST['lang1'];
 $lang2=$_POST['lang2'];
@@ -105,19 +105,62 @@ catch(Exception $e){
     die('Erreur :'.$e->getMessage());
 }
 
-$query='SELECT COUNT(*) FROM ma_table WHERE nom = "$nom" AND prenom="$prenom"';
-$slut=$bdd->query($query);
-echo $slut; 
+// $query='SELECT COUNT(*) FROM ma_table WHERE nom = "$nom" AND prenom="$prenom"';
+// $slut=$bdd->query($query);
+// echo $slut; 
 
-$req2=$bdd->prepare("INSERT INTO `infoperso` (`idPerso`, `dejBene`, `licence`, `textarea`, `reglement`, `nom`, `prenom`, `club`, `age`, `mail`, `numeroTel`, `tShirt`, `lang1`, `lang2`, `lang3`, `poste1`, `poste2`, `poste3`, `marMat`, `marAprem`, `merMat`, `merAprem`, `jeuMat`, `jeuAprem`, `venMat`, `venAprem`, `samMat`, `samAprem`, `dimMat`, `dimAprem`) VALUES (NULL, '$dejBene', '$licence', '$textarea', '1', '$nom', '$prenom', '$club', '20', '$mail', '$numeroTel', '$tShirt', '$lang1', '$lang2', '$lang3', '$post1', '$post2', '$post3', '$marMat', '$marAprem', '$merMat', '$merAprem', '$jeuMat', '$jeuAprem', '$venMat', '$venAprem', '$samMat', '$samAprem', '$dimMat', '$dimAprem')");
+$req2=$bdd->prepare(
+    "INSERT INTO infoperso (idPerso, dejBene, licence, textarea, reglement, nom, prenom, club, age, mail, numeroTel, tShirt, lang1, lang2, lang3, post1, post2, post3, marMat, marAprem, merMat, merAprem, jeuMat, jeuAprem, venMat, venAprem, samMat, samAprem, dimMat, dimAprem) 
+    VALUES (NULL, :dejBene, :licence, :textarea, :reglement, :nom, :prenom, :club, :age, :mail, :numeroTel, :tShirt, :lang1, :lang2, :lang3, :post1, :post2, :post3, :marMat, :marAprem, :merMat, :merAprem, :jeuMat, :jeuAprem, :venMat, :venAprem, :samMat, :samAprem, :dimMat, :dimAprem)"
+    );
+
+
+$req2->execute(array(
+    'dejBene'=>$dejBene, 
+    'licence'=>$licence, 
+    'textarea'=>$textarea, 
+    'reglement'=>$reglement,
+    'nom'=>$nom, 
+    'prenom'=>$prenom, 
+    'club'=>$club, 
+    'age'=>$age, 
+    'mail'=>$mail, 
+    'numeroTel'=>$numeroTel, 
+    'tShirt'=>$tShirt, 
+    'lang1'=>$lang1, 
+    'lang2'=>$lang2, 
+    'lang3'=>$lang3, 
+    'post1'=>$post1, 
+    'post2'=>$post2, 
+    'post3'=>$post3, 
+    'marMat'=>$marMat, 
+    'marAprem'=>$marAprem, 
+    'merMat'=>$merMat, 
+    'merAprem'=>$merAprem, 
+    'jeuMat'=>$jeuMat, 
+    'jeuAprem'=>$jeuAprem, 
+    'venMat'=>$venMat, 
+    'venAprem'=>$venAprem, 
+    'samMat'=>$samMat, 
+    'samAprem'=>$samAprem, 
+    'dimMat'=>$dimMat, 
+    'dimAprem'=>$dimAprem
+));
+
 
 // if (($reglement=1) and ($nom!=NULL) and ($prenom!=NULL) and ($club!=NULL) and ($age!=NULL) and ($mail!=NULL) and ($numeroTel!=NULL) and ($mail_verif=1) and ($numeroTel_verif=1) and ($nbDeDispo>=1)){
 
-if($req2->execute()){
-    echo 'sa fonctionne';
-}
+var_dump($req2);
 
-//liste des condition :
+// if($req2->execute()==1){
+//     echo 'ca fonctionne';
+// }
+// else{
+//     echo"<br/><hr>";
+//     print_r($bdd->errorInfo());
+// }
+
+//liste des conditions :
 //plus de 1 checkbox cochée (j'ai crée une var: nbDeDispo ligne 274)
 //email correct
 //tout les champ sont remplie
