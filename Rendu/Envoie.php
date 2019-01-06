@@ -36,10 +36,7 @@
 </html>
 
 <?php
-function calculAge($age){
-    $res=date('Y')-$age;
-    return $res;
-}
+
 if(stristr($_POST['dejBene'],"oui")){
     $dejBene=1;
 }
@@ -59,11 +56,35 @@ if(stristr($_POST['reglement'],"oui")){
 else{
     $reglement=0;
 }
+if(stristr($_POST['tourbene'],"oui")){
+    $tourbene=1;    
+}
+else{
+    $tourbene=0;
+}
+if(stristr($_POST['soirbene'],"oui")){
+    $soirbene=1;
+}
+else{
+    $soirbene=0;
+}
+if(stristr($_POST['visbene'],"oui")){
+    $visbene=1;
+}
+else{
+    $visbene=0;
+}
+if(stristr($_POST['permis'],"oui")){
+    $permis=1;
+}
+else{
+    $permis=0;
+}
 
 $nom=$_POST['nom'];
 $prenom=$_POST['prenom'];
 $club=$_POST['club'];
-$age=@calculAge($_POST['age']);
+$date_naissance = $_POST['date'][0] . '/' . $_POST['date'][1] . '/' . $_POST['date'][2];
 if(isset($_POST['mail']))
 {
 $mail = htmlspecialchars($_POST['mail']);
@@ -131,8 +152,8 @@ catch(Exception $e){
 } 
 
 $req2=$bdd->prepare(
-    "INSERT INTO infoperso (idPerso, dejBene, licence, textarea, reglement, nom, prenom, club, age, mail, numeroTel, tShirt, lang1, lang2, lang3, post1, post2, post3, marMat, marAprem, merMat, merAprem, jeuMat, jeuAprem, venMat, venAprem, samMat, samAprem, dimMat, dimAprem) 
-    VALUES (NULL, :dejBene, :licence, :textarea, :reglement, :nom, :prenom, :club, :age, :mail, :numeroTel, :tShirt, :lang1, :lang2, :lang3, :post1, :post2, :post3, :marMat, :marAprem, :merMat, :merAprem, :jeuMat, :jeuAprem, :venMat, :venAprem, :samMat, :samAprem, :dimMat, :dimAprem)"
+    "INSERT INTO infoperso (idPerso, dejBene, licence, textarea, reglement, tourbene, soirbene, visbene, nom, prenom, club, date_naissance, mail, numeroTel, tShirt, lang1, lang2, lang3, permis, post1, post2, post3, marMat, marAprem, merMat, merAprem, jeuMat, jeuAprem, venMat, venAprem, samMat, samAprem, dimMat, dimAprem) 
+    VALUES (NULL, :dejBene, :licence, :textarea, :reglement, :tourbene, :soirbene, :visbene, :nom, :prenom, :club, :date_naissance, :mail, :numeroTel, :tShirt, :lang1, :lang2, :lang3, :permis, :post1, :post2, :post3, :marMat, :marAprem, :merMat, :merAprem, :jeuMat, :jeuAprem, :venMat, :venAprem, :samMat, :samAprem, :dimMat, :dimAprem)"
     );
 
 
@@ -141,16 +162,20 @@ $req2->execute(array(
     'licence'=>$licence, 
     'textarea'=>$textarea, 
     'reglement'=>$reglement,
+    'tourbene'=>$tourbene,
+    'soirbene'=>$soirbene,
+    'visbene'=>$visbene,
     'nom'=>$nom, 
     'prenom'=>$prenom, 
     'club'=>$club, 
-    'age'=>$age, 
+    'date_naissance'=>$date_naissance, 
     'mail'=>$mail, 
     'numeroTel'=>$numeroTel, 
     'tShirt'=>$tShirt, 
     'lang1'=>$lang1, 
     'lang2'=>$lang2, 
-    'lang3'=>$lang3, 
+    'lang3'=>$lang3,
+    'permis'=>$permis,
     'post1'=>$post1, 
     'post2'=>$post2, 
     'post3'=>$post3, 
@@ -167,5 +192,65 @@ $req2->execute(array(
     'dimMat'=>$dimMat, 
     'dimAprem'=>$dimAprem
 ));
+
+if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
+{
+        if ($_FILES['photo']['size'] <= 3145728)
+        {
+                $infosfichier = pathinfo($_FILES['photo']['name']);
+                $extension_upload = $infosfichier['extension'];
+                $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
+                if (in_array($extension_upload, $extensions_autorisees))
+                {
+                        $dest='photos/';
+                        move_uploaded_file($_FILES['photo']['tmp_name'], $dest . $_FILES['photo']['name']);
+                        $info = new SplFileInfo($_FILES['photo']['name']);
+                        $ext=$info->getExtension();
+                        $nomphoto=strtoupper($nom.'_'.$prenom);
+                        rename($dest.$_FILES['photo']['name'], $dest.$nomphoto.'.'.$ext);
+                }
+                else
+                {
+                    $message='Extention non-autorisee';
+ 
+                    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+                }
+        }
+        else
+        {
+            $message='Image trop voluminueuse';
+            echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+        }
+}
+elseif (isset($_FILES['photo']) AND $_FILES['photo']['error'] == UPLOAD_ERR_NO_FILE)
+{
+    $message='Fichier inexistant';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+}
+elseif (isset($_FILES['photo']) AND $_FILES['photo']['error'] == UPLOAD_ERR_PARTIAL)
+{
+    $message='Fichier uploadé que partiellement';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+}
+elseif (isset($_FILES['photo']) AND $_FILES['photo']['error'] == UPLOAD_ERR_INI_SIZE)
+{
+    $message='Fichier trop voluminueux';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+}
+elseif (isset($_FILES['photo']) AND $_FILES['photo']['error'] == UPLOAD_ERR_FORM_SIZE)
+{
+    $message='Fichier trop voluminueux';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+}
+elseif (!isset($_FILES['photo']))
+{
+    $message='Pas de variable';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+}
+else
+{
+    $message='Probleme a l\'envoi';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+}
 
 ?>

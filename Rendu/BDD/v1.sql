@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Sam 05 Janvier 2019 à 11:58
+-- Généré le :  Dim 06 Janvier 2019 à 19:02
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -32,16 +32,20 @@ CREATE TABLE `infoperso` (
   `licence` tinyint(1) NOT NULL DEFAULT '0',
   `textarea` varchar(512) NOT NULL,
   `reglement` tinyint(1) NOT NULL DEFAULT '0',
+  `tourbene` tinyint(1) NOT NULL DEFAULT '0',
+  `soirbene` tinyint(1) NOT NULL DEFAULT '0',
+  `visbene` tinyint(1) NOT NULL DEFAULT '0',
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `club` varchar(255) NOT NULL,
-  `age` int(11) NOT NULL,
+  `date_naissance` varchar(50) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `numeroTel` varchar(255) NOT NULL,
   `tShirt` varchar(8) NOT NULL,
   `lang1` varchar(255) NOT NULL,
   `lang2` varchar(255) NOT NULL,
   `lang3` varchar(255) NOT NULL,
+  `permis` tinyint(1) NOT NULL DEFAULT '0',
   `post1` varchar(255) NOT NULL,
   `post2` varchar(255) NOT NULL,
   `post3` varchar(255) NOT NULL,
@@ -77,7 +81,7 @@ ALTER TABLE `infoperso`
 -- AUTO_INCREMENT pour la table `infoperso`
 --
 ALTER TABLE `infoperso`
-  MODIFY `idPerso` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPerso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

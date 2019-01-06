@@ -54,3 +54,13 @@ div{
 .saut{
     height: 10vh;
 }
+
+.Attention{
+	text-align: center;
+	color: red;
+	font-weight:bold;
+}
+
+span.souligne{
+	text-decoration: underline;
+}
