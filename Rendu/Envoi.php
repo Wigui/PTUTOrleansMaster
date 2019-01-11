@@ -82,7 +82,9 @@ else{
 }
 
 $nom=$_POST['nom'];
+$nom2=$nom;
 $prenom=$_POST['prenom'];
+$prenom2=$prenom;
 $club=$_POST['club'];
 $date_naissance = $_POST['date'][0] . '/' . $_POST['date'][1] . '/' . $_POST['date'][2];
 if(isset($_POST['mail']))
@@ -206,7 +208,8 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
                         move_uploaded_file($_FILES['photo']['tmp_name'], $dest . $_FILES['photo']['name']);
                         $info = new SplFileInfo($_FILES['photo']['name']);
                         $ext=$info->getExtension();
-                        $nomphoto=strtoupper($nom.'_'.$prenom);
+                        $nomphoto=strtoupper($nom2.'_'.$prenom2);
+                        $nomphoto = str_replace(CHR(32),"",$nomphoto); 
                         rename($dest.$_FILES['photo']['name'], $dest.$nomphoto.'.'.$ext);
                 }
                 else

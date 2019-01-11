@@ -1,5 +1,6 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Formulaire Bénévole</title>
@@ -20,7 +21,7 @@
                 <p class="Attention"><span class="souligne">ATTENTION </span>: Tout dossier non complet (Formulaire d'inscription + Charte validée + Photo) sera systématiquement rejeté. Fermeture des inscriptions le 1er février 2019.</p>
             </div>
         </div>
-        <form method="POST" action="Envoi.php" enctype="multipart/form-data" onSubmit="return valider()">
+        <form method="POST" action="Envoi.php" enctype="multipart/form-data">
             <div class="row" class="centered">
                 <div class="col-lg-5" class="col-xs-11" class="centered"  class="custom-control custom-checkbox custom-control-inline">    
                     <fieldset class="card">
@@ -32,7 +33,7 @@
                                 <label class="custom-control-label" for="defaultChecked">oui</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input name="dejBene" value="Non" type="radio" class="custom-control-input" id="defaultUnchecked" checked/>
+                                <input name="dejBene" value="Non" type="radio" class="custom-control-input" id="defaultUnchecked"/>
                                 <label class="custom-control-label" for="defaultUnchecked">Non</label>
                             </div>
                             <br/><br/>    
@@ -42,13 +43,13 @@
                                 <label class="custom-control-label" for="defaultChecked1">oui</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input name="licence" value="Non" type="radio" class="custom-control-input" id="defaultUnchecked1" checked/>
+                                <input name="licence" value="Non" type="radio" class="custom-control-input" id="defaultUnchecked1"/>
                                 <label class="custom-control-label" for="defaultUnchecked1">Non</label>
                             </div>
                             <br/><br/> 
                             <p>Par quel(s) moyen avez-vous entendu parlé de cet évènement?</p>
                             <div class="md-form mb-4 pink-textarea active-pink-textarea">
-    							<textarea name="textarea" type="text" id="form18" class="md-textarea form-control" rows="1" onblur="validationDej(this)"></textarea>
+    							<textarea name="textarea" type="text" id="form18" class="md-textarea form-control" rows="1"></textarea>
     							<label for="form18">(Cliquer pour répondre)</label>
                             </div>
                             <p>Souhaitez vous participer au tournoi des bénévoles le vendredi 22 mars au matin ?</p>
@@ -57,7 +58,7 @@
                                 <label class="custom-control-label" for="defaultChecked3">Oui</label>  
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" name="tourbene" value="Non" class="custom-control-input" id="defaultUnchecked3" checked/>
+                                <input type="radio" name="tourbene" value="Non" class="custom-control-input" id="defaultUnchecked3"/>
                                 <label class="custom-control-label" for="defaultUnchecked3">Non</label>
                             </div>
                             <br/><br/> 
@@ -67,7 +68,7 @@
                                 <label class="custom-control-label" for="defaultChecked4">Oui</label>  
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" name="soirbene" value="Non" class="custom-control-input" id="defaultUnchecked4" checked/>
+                                <input type="radio" name="soirbene" value="Non" class="custom-control-input" id="defaultUnchecked4"/>
                                 <label class="custom-control-label" for="defaultUnchecked4">Non</label>
                             </div>
                             <br/><br/> 
@@ -77,7 +78,7 @@
                                 <label class="custom-control-label" for="defaultChecked5">Oui</label>  
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" name="visbene" value="Non" class="custom-control-input" id="defaultUnchecked5" checked/>
+                                <input type="radio" name="visbene" value="Non" class="custom-control-input" id="defaultUnchecked5"/>
                                 <label class="custom-control-label" for="defaultUnchecked5">Non</label>
                             </div>
                             <br/><br/>
@@ -106,11 +107,11 @@
                             <h4>Mes informations personnelles : </h4>
                             <div class="decal">
                                 <div class="md-form mb-4 pink-textarea active-pink-textarea">
-                                    <textarea name="nom" type="text" id="form18" class="md-textarea form-control" rows="1" required onblur="validationNom(this)"></textarea>
+                                    <textarea name="nom" type="text" id="form18" class="md-textarea form-control" rows="1" required></textarea>
                                     <label for="form18">Votre nom</label>
                                 </div>
                                 <div class="md-form mb-4 pink-textarea active-pink-textarea">
-                                    <textarea name="prenom" type="text" id="form19" class="md-textarea form-control" rows="1" required onblur="validationPrenom(this)"></textarea>
+                                    <textarea name="prenom" type="text" id="form19" class="md-textarea form-control" rows="1" required></textarea>
                                     <label for="form19">Votre prénom</label>
                                 </div>
                                 <div class="md-form mb-4 pink-textarea active-pink-textarea">
@@ -130,15 +131,15 @@
                                     </tr>
                                 </div>
                                 <div class="md-form mb-4 pink-textarea active-pink-textarea">
-                                    <textarea name="mail" type="text" id="form21" class="md-textarea form-control" rows="1" required onblur="validationEmail(this)"></textarea>
+                                    <textarea name="mail" type="text" id="form21" class="md-textarea form-control" rows="1" required></textarea>
                                     <label for="form21">Votre adresse mail</label>
                                 </div>
                                 <div class="md-form mb-4 pink-textarea active-pink-textarea">
-                                    <textarea name="numeroTel" type="text" id="form22" class="md-textarea form-control"     rows="1" required onblur="validationNum(this)"></textarea>
+                                    <textarea name="numeroTel" type="text" id="form22" class="md-textarea form-control"     rows="1" required></textarea>
                                     <label for="form22">Votre numéro de téléphone</label>
                                 </div>
                                 <div class="md-form mb-4 pink-textarea active-pink-textarea">
-                                    <textarea name="club" type="text" id="form23" class="md-textarea form-control" rows="1" onblur="validationDej(this)"></textarea>
+                                    <textarea name="club" type="text" id="form23" class="md-textarea form-control" rows="1"></textarea>
                                     <label for="form23">Votre club</label>
                                 </div>
                                 <p>Taille de T-Shirt :</p>
@@ -360,133 +361,22 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/js/mdb.min.js"></script>
-<script type="text/javascript"  >
+<script type="text/javascript">
+$(function(){
+    $( ".reglement" ).change(function() {
+    // console.log( "change OK" );
+        $(".cache").toggleClass( "hidden" );
+        if($(this).val()=="Oui"){
+            var target = $(this);
+	        $('html, body')
+                .stop()
+                .animate({scrollTop: $(target).offset().top+90}, 1000 );
+        }
+    // else if($(this).val()=="Non"){
+    //     $( ".cache" ).toggleClass( "hidden" );
+    // }
 
-
-function validationDej(champ)
-{
-var expressionReguliere = /^[^\\/<>^()_]+$/;
-if ((champ.value)!=""){
-if (expressionReguliere.test(champ.value))
-{
-
-
-champ.style.backgroundColor = "white";
-champ.style.color= "black";
-}
-else
-{
-champ.style.backgroundColor = "rgb(229, 36, 33,0.7  )";
-champ.style.borderRadius=('3px');
-champ.style.color= "white";
-
-}
-}}
-
-console.log("salut");
-workp=false;
-workn=false;
-worke=false;
-workt=false;
-
-function validationPrenom(champ)
-{
-
-var expressionReguliere = /^[^\\/<>^()]+$/;
-if ((champ.value)!=""){
-if (expressionReguliere.test(champ.value))
-{
-
-workp=true;
-champ.style.backgroundColor = "white";
-champ.style.color= "black";
-}
-else
-{
-champ.style.backgroundColor = "rgb(229, 36, 33,0.7  )";
-champ.style.borderRadius=('3px');
-champ.style.color= "white";
-workp=false;
-} }
-
-
-}
-
-function validationNom(champ)
-{
-var expressionReguliere = /^[^\\/<>^()_]+$/;
-if ((champ.value)!=""){
-if (expressionReguliere.test(champ.value))
-{
-
-workn=true;
-champ.style.backgroundColor = "white";
-champ.style.color= "black";
-}
-else
-{
-champ.style.backgroundColor = "rgb(229, 36, 33,0.7  )";
-champ.style.borderRadius=('3px');
-champ.style.color= "white";
-workn=false;
-}
-}}
-
-function validationEmail(champ)
-{
-console.log (champ.value);
-if ((champ.value)!=""){
-var expressionReguliereMail = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
-if (expressionReguliereMail.test(champ.value))
-{
-
-worke=true;
-champ.style.backgroundColor = "white";
-champ.style.color= "black";
-}
-else
-{
-champ.style.backgroundColor = "rgb(229, 36, 33,0.7  )";
-champ.style.borderRadius=('3px');
-champ.style.color= "white";
-
-worke=false;
-}
-}
-}
-
-function validationNum(champ)
-{
-
-var expressionReguliereNum = /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/;
-if ((champ.value)!=""){
-if (expressionReguliereNum.test(champ.value))
-{
-
-workt=true;
-champ.style.backgroundColor = "white";
-champ.style.color= "black";
-}
-else
-{
-champ.style.backgroundColor = "rgb(229, 36, 33,0.7  )";
-champ.style.borderRadius=('3px');
-champ.style.color= "white";
-workt=false;
-}
-}}
-function valider(){
-    console.log(workn)
-    console.log(workp)
-    console.log(worke)
-    console.log(workt)
-   if (!workn || !workp || !worke || !workt){
-	return false;
-   }
-   else{
-	return true;
-   }
-}
-    </script>
-<script type="text/javascript" src="js/script.js"></script>
+    });
+});
+</script>
 </html>

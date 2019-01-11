@@ -79,10 +79,12 @@ else
 }
 
 echo "<br/><br/><br/><br/>";
-$op="lolilol";
+$op=" lo lilol ";
 $utain='bouffon';
 
 $rass=$op.'_'.$utain;
 $rass=strtoupper($rass);
 echo $rass;
+$op = str_replace(CHR(32),"",$op); 
+echo $op;
 ?>
