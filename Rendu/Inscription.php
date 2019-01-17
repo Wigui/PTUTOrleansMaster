@@ -15,10 +15,26 @@
         <h3>Formulaire d'inscription bénévole</h3>
     </header>
     <div class="container-12" class="centered" id="formContainer">
+    <div class="row" class="centered">
+    <div class="col-lg-5">
+    <p class="Attention"><span class="souligne">ATTENTION </span>: Tout dossier non complet (Formulaire d'inscription + Charte validée + Photo) sera systématiquement rejeté. Fermeture des inscriptions le 1er février 2019.</p>
+    </div>
+    </div>
         <div class="row" class="centered">
-            <div class="col-lg-5" class="col-xs-11" class="centered">
-                <p class="Attention"><span class="souligne">ATTENTION </span>: Tout dossier non complet (Formulaire d'inscription + Charte validée + Photo) sera systématiquement rejeté. Fermeture des inscriptions le 1er février 2019.</p>
-            </div>
+        
+        <div class="col-lg-5">
+                    <fieldset class="card">
+                        <div class="decal2">
+                        
+                <h4>Les frais pris en charge par l’organisation :</h4><br>
+                <ul>
+                <li>Les frais de repas durant toute la durée de la compétition du samedi 16 mars au dimanche 24 mars au palais des sports,</li>
+                <li>Les frais d’hôtel incluant le petit déjeuner à l’hôtel Adagio, 2 à 3 personnes par chambre en lit simple (suivant les jours de présences retenues),</li>
+                <li>Les frais de transport limité à 60€ par personne pour ceux qui habitent en dehors de l’agglomération Orléanaise,</li>
+                <li>Les T-Shirts fournis par nos partenaires pendant la compétition.</li></ul>
+                        </div>
+                    </fieldset>
+                </div>
         </div>
         <form method="POST" action="Envoi.php" enctype="multipart/form-data" onSubmit="return valider()">
             <div class="row" class="centered">
@@ -264,6 +280,7 @@
                         <h4>Mes disponibilités :</h4><br/>
                         <h6>Les horaires sont susceptibles d’être revus et adaptés selon les contraintes de chaque pôle (voir fiche de pôle)</h6><br/>
                         <div class="decal">
+                        <!--lundi idem -->
                             <p class="bold"> Mardi : </p>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="marMat" type="checkbox" class="custom-control-input" id="defaultChecked6">
@@ -307,21 +324,21 @@
                             <p class="bold"> Samedi : </p>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="samMat" type="checkbox" class="custom-control-input" id="defaultChecked10">
-                                <label class="custom-control-label" for="defaultChecked10">matin (8h-15h)</label>
+                                <label class="custom-control-label" for="defaultChecked10">matin (9h-15h)</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="samAprem" type="checkbox" class="custom-control-input" id="defaultUnchecked10">
-                                <label class="custom-control-label" for="defaultUnchecked10">après-midi (15h-22h)</label>
+                                <label class="custom-control-label" for="defaultUnchecked10">après-midi (15h-21h)</label>
                             </div>
                             <br/><br/>
                             <p class="bold"> Dimanche : </p>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="dimMat" type="checkbox" class="custom-control-input" id="defaultChecked11">
-                                <label class="custom-control-label" for="defaultChecked11">matin (8h-15h)</label>
+                                <label class="custom-control-label" for="defaultChecked11">matin (9h-15h)</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="dimAprem" type="checkbox" class="custom-control-input" id="defaultUnchecked11">
-                                <label class="custom-control-label" for="defaultUnchecked11">après-midi (15h-22h)</label>
+                                <label class="custom-control-label" for="defaultUnchecked11">après-midi (15h-21h)</label>
                             </div>                        
                             <br/><br/>
                         </div>

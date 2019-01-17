@@ -44,7 +44,11 @@ div{
 .decal{
 	margin-top: 20px;
 	margin-left: 30px;
-	margin-right: 30px;
+	margin-right: 25px;
+}
+
+.decal2{
+	margin-right: 0px;
 }
 
 .bold{

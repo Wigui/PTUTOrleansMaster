@@ -156,27 +156,27 @@ $message = "<h1>Bénévolat Orléans Master Badminton</h1>
         <h2>Informations prélimitaire</h2><br>
         <br>
         <p>Participation aux années précédentes  : ".$_POST['dejBene'].'<br>
-        Êtes-vous licencié(e) à la FFBAD ou autre Fédération Nationale de Badminton ? '..'<br>
-        Participation au tournoi des bénévoles le 22 mars au matin ? '..'<br>
-        Souhaitez vous participer à la soirée des bénévoles le vendredi 22 mars au soir ? '.."<br>
-        Souhaitez vous participer à la sortie au musée des beaux d'arts le samedi 23 mars au matin ? "..'<br>
+        Êtes-vous licencié(e) à la FFBAD ou autre Fédération Nationale de Badminton ? '.$_POST['licence'].'<br>
+        Participation au tournoi des bénévoles le 22 mars au matin ? '.$_POST['tourbene'].'<br>
+        Souhaitez vous participer à la soirée des bénévoles le vendredi 22 mars au soir ? '.$_POST['soirbene']."<br>
+        Souhaitez vous participer à la sortie au musée des beaux d'arts le samedi 23 mars au matin ? ".$_POST['visbene'].'<br>
         <br>
         Informations personnelles :<br>
         <br>
-        <b>Nom : </b> '. $_POST['nom'] . '<br>
-        Prenom : '..'<br>
-        Date de naissance : '.. '<br>
-        <b>Email : </b>'. $_POST['email'] . '<br>
-        Numéro de Teléphone : '..'<br>
-        Taille de T-Shirt : '..'<br>
-        Langue étrangères : '.. '<br>
-        Possession du permis (B) de conduire ? '..'<br>
+        <b>Nom : </b> '. $nom . '<br>
+        Prenom : '.$prenom.'<br>
+        Date de naissance : '.$date_naissance. '<br>
+        <b>Email : </b>'. $mail. '<br>
+        Numéro de Teléphone : '.$numeroTel.'<br>
+        Taille de T-Shirt : '.$tShirt.'<br>
+        Langue étrangères : '.$lang1.' / '.$lang2.' / '.$lang3. '<br>
+        Possession du permis (B) de conduire ? '.$_POST['permis'].'<br>
         <br>
         Vos choix de poste : <br>
         <br>
-        Choix n°1'..'<br>
-        Choix n°1'..'<br>
-        Choix n°1'..'<br>
+        Choix n°1 : '.$post1.'<br>
+        Choix n°2 : '.$post2.'<br>
+        Choix n°3 : '.$post3.'<br>
         <br>
         Vos disponibilités :<br>
         <br>
