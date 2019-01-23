@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1
--- http://www.phpmyadmin.net
+-- version 4.7.3
+-- https://www.phpmyadmin.net/
 --
--- Client :  localhost
--- Généré le :  Mer 23 Janvier 2019 à 13:49
--- Version du serveur :  5.7.11
--- Version de PHP :  5.6.18
+-- Hôte : cltobadmintivo.mysql.db
+-- Généré le :  mar. 22 jan. 2019 à 20:47
+-- Version du serveur :  5.5.60-0+deb7u1-log
+-- Version de PHP :  5.6.38-0+deb8u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `v1`
+-- Base de données :  `cltobadmintivo`
 --
 
 -- --------------------------------------------------------
@@ -70,7 +72,7 @@ CREATE TABLE `infoperso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `infoperso`
+-- Déchargement des données de la table `infoperso`
 --
 
 INSERT INTO `infoperso` (`idPerso`, `dejBene`, `licence`, `textarea`, `reglement`, `tourbene`, `soirbene`, `visbene`, `nom`, `prenom`, `club`, `date_naissance`, `mail`, `numeroTel`, `tShirt`, `lang1`, `lang2`, `lang3`, `permis`, `post1`, `post2`, `post3`, `sam2Mat`, `sam2Aprem`, `dim2Mat`, `dim2Aprem`, `lunMat`, `lunAprem`, `marMat`, `marAprem`, `merMat`, `merAprem`, `jeuMat`, `jeuAprem`, `venMat`, `venAprem`, `samMat`, `samAprem`, `dimMat`, `dimAprem`) VALUES
@@ -111,7 +113,7 @@ INSERT INTO `infoperso` (`idPerso`, `dejBene`, `licence`, `textarea`, `reglement
 (48, 0, 0, 'Par des amis de club.', 1, 1, 1, 0, 'CAMARA', 'Ségolène ', 'CLTO Badminton ', '28/11/2016', 'segolene.camara@cltobadminton.fr', '0671970396', 'tailleM', 'anglais', 'espagnole', 'aucune', 1, 'competition', 'communication', 'gestJoueurs', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 --
--- Index pour les tables exportées
+-- Index pour les tables déchargées
 --
 
 --
@@ -121,14 +123,15 @@ ALTER TABLE `infoperso`
   ADD PRIMARY KEY (`idPerso`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
 -- AUTO_INCREMENT pour la table `infoperso`
 --
 ALTER TABLE `infoperso`
-  MODIFY `idPerso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `idPerso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

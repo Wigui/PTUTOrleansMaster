@@ -117,6 +117,12 @@ foreach ($_POST['horaire'] as $value) {
 // JSON_Encode
 
 $tablo = array(
+"sam2Mat"=>0,
+"sam2Aprem"=>0,
+"dim2Mat"=>0,
+"dim2Aprem"=>0,
+"lunMat"=>0,
+"lunAprem"=>0,    
 "marMat"=>0,
 "marAprem"=>0,
 "merMat"=>0,
@@ -154,8 +160,8 @@ catch(Exception $e){
 } 
 
 $req2=$bdd->prepare(
-    "INSERT INTO infoperso (idPerso, dejBene, licence, textarea, reglement, tourbene, soirbene, visbene, nom, prenom, club, date_naissance, mail, numeroTel, tShirt, lang1, lang2, lang3, permis, post1, post2, post3, marMat, marAprem, merMat, merAprem, jeuMat, jeuAprem, venMat, venAprem, samMat, samAprem, dimMat, dimAprem) 
-    VALUES (NULL, :dejBene, :licence, :textarea, :reglement, :tourbene, :soirbene, :visbene, :nom, :prenom, :club, :date_naissance, :mail, :numeroTel, :tShirt, :lang1, :lang2, :lang3, :permis, :post1, :post2, :post3, :marMat, :marAprem, :merMat, :merAprem, :jeuMat, :jeuAprem, :venMat, :venAprem, :samMat, :samAprem, :dimMat, :dimAprem)"
+    "INSERT INTO infoperso (idPerso, dejBene, licence, textarea, reglement, tourbene, soirbene, visbene, nom, prenom, club, date_naissance, mail, numeroTel, tShirt, lang1, lang2, lang3, permis, post1, post2, post3, sam2Mat, sam2Aprem, dim2Mat, dim2Aprem, lunMat, lunAprem, marMat, marAprem, merMat, merAprem, jeuMat, jeuAprem, venMat, venAprem, samMat, samAprem, dimMat, dimAprem) 
+    VALUES (NULL, :dejBene, :licence, :textarea, :reglement, :tourbene, :soirbene, :visbene, :nom, :prenom, :club, :date_naissance, :mail, :numeroTel, :tShirt, :lang1, :lang2, :lang3, :permis, :post1, :post2, :post3, :sam2Mat, :sam2Aprem, :dim2Mat, :dim2Aprem, :lunMat, :lunAprem, :marMat, :marAprem, :merMat, :merAprem, :jeuMat, :jeuAprem, :venMat, :venAprem, :samMat, :samAprem, :dimMat, :dimAprem)"
     );
 
 
@@ -180,7 +186,13 @@ $req2->execute(array(
     'permis'=>$permis,
     'post1'=>$post1, 
     'post2'=>$post2, 
-    'post3'=>$post3, 
+    'post3'=>$post3,
+    'sam2Mat'=>$sam2Mat,
+    'sam2Aprem'=>$sam2Aprem,
+    'dim2Mat'=>$dim2Mat,
+    'dim2Aprem'=>$dim2Aprem,
+    'lunMat'=>$lunMat,
+    'lunAprem'=>$lunAprem,
     'marMat'=>$marMat, 
     'marAprem'=>$marAprem, 
     'merMat'=>$merMat, 

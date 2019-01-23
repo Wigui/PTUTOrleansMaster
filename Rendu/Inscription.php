@@ -280,8 +280,37 @@
                         <h4>Mes disponibilités :</h4><br/>
                         <h6>Les horaires sont susceptibles d’être revus et adaptés selon les contraintes de chaque pôle (voir fiche de pôle)</h6><br/>
                         <div class="decal">
-                        <!--lundi idem -->
-                            <p class="bold"> Mardi : </p>
+                        <p class="bold"> Samedi 16 Mars : </p>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="sam2Mat" type="checkbox" class="custom-control-input" id="defaultChecked14">
+                                <label class="custom-control-label" for="defaultChecked14">matin (9h-15h)</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="sam2Aprem" type="checkbox" class="custom-control-input" id="defaultUnchecked14">
+                                <label class="custom-control-label" for="defaultUnchecked14">après-midi (15h-21h)</label>
+                            </div>
+                            <br/><br/>
+                        <p class="bold"> Dimanche 17 Mars : </p>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="dim2Mat" type="checkbox" class="custom-control-input" id="defaultChecked13">
+                                <label class="custom-control-label" for="defaultChecked13">matin (9h-15h)</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="dim2Aprem" type="checkbox" class="custom-control-input" id="defaultUnchecked13">
+                                <label class="custom-control-label" for="defaultUnchecked13">après-midi (15h-21h)</label>
+                            </div>
+                            <br/><br/>
+                            <p class="bold"> Lundi 18 Mars : </p>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="lunMat" type="checkbox" class="custom-control-input" id="defaultChecked12">
+                                <label class="custom-control-label" for="defaultChecked12">matin (9h-15h)</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input name="horaire[]" value="lunAprem" type="checkbox" class="custom-control-input" id="defaultUnchecked12">
+                                <label class="custom-control-label" for="defaultUnchecked12">après-midi (15h-21h)</label>
+                            </div>
+                            <br/><br/>
+                            <p class="bold"> Mardi 19 Mars : </p>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="marMat" type="checkbox" class="custom-control-input" id="defaultChecked6">
                                 <label class="custom-control-label" for="defaultChecked6">matin (8h-15h)</label>
@@ -291,7 +320,7 @@
                                 <label class="custom-control-label" for="defaultUnchecked6">après-midi (15h-22h)</label>
                             </div>
                             <br/><br/>
-                            <p class="bold"> Mercredi : </p>
+                            <p class="bold"> Mercredi 20 Mars : </p>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="merMat" type="checkbox" class="custom-control-input" id="defaultChecked7">
                                 <label class="custom-control-label" for="defaultChecked7">matin (8h-15h)</label>
@@ -301,7 +330,7 @@
                                 <label class="custom-control-label" for="defaultUnchecked7">après-midi (15h-22h)</label>
                             </div>
                             <br/><br/>
-                            <p class="bold"> Jeudi : </p>
+                            <p class="bold"> Jeudi 21 Mars : </p>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="jeuMat" type="checkbox" class="custom-control-input" id="defaultChecked8">
                                 <label class="custom-control-label" for="defaultChecked8">matin (8h-15h)</label>
@@ -311,7 +340,7 @@
                                 <label class="custom-control-label" for="defaultUnchecked8">après-midi (15h-22h)</label>
                             </div>
                             <br/><br/>
-                            <p class="bold"> Vendredi : </p>
+                            <p class="bold"> Vendredi 22 Mars : </p>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="venMat" type="checkbox" class="custom-control-input" id="defaultChecked9">
                                 <label class="custom-control-label" for="defaultChecked9">matin (8h-15h)</label>
@@ -321,7 +350,7 @@
                                 <label class="custom-control-label" for="defaultUnchecked9">après-midi (15h-22h)</label>
                             </div>
                             <br/><br/>
-                            <p class="bold"> Samedi : </p>
+                            <p class="bold"> Samedi 23 Mars : </p>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="samMat" type="checkbox" class="custom-control-input" id="defaultChecked10">
                                 <label class="custom-control-label" for="defaultChecked10">matin (9h-15h)</label>
@@ -331,7 +360,7 @@
                                 <label class="custom-control-label" for="defaultUnchecked10">après-midi (15h-21h)</label>
                             </div>
                             <br/><br/>
-                            <p class="bold"> Dimanche : </p>
+                            <p class="bold"> Dimanche 24 Mars : </p>
                             <div class="custom-control custom-checkbox custom-control-inline">
                                 <input name="horaire[]" value="dimMat" type="checkbox" class="custom-control-input" id="defaultChecked11">
                                 <label class="custom-control-label" for="defaultChecked11">matin (9h-15h)</label>

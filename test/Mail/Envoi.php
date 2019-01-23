@@ -180,9 +180,30 @@ $message = "<h1>Bénévolat Orléans Master Badminton</h1>
         <br>
         Vos disponibilités :<br>
         <br>
+        Le Mardi matin (8h-15h) : '.if($tablo["marMat"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Mardi après-midi (15h-22h) : '.if($tablo["marAprem"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Mercredi matin (8h-15h) : '.if($tablo["merMat"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Mercredi après-midi (15h-22h) : '.if($tablo["merAprem"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Jeudi matin (8h-15h) : '.if($tablo["jeuMat"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Jeudi après-midi (15h-22h) : '.if($tablo["jeuAprem"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Vendredi matin (8h-15h) : '.if($tablo["venMat"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Vendredi après-midi (15h-22h) : '.if($tablo["marAprem"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Samedi matin (9h-15h) : '.if($tablo["samMat"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Samedi après-midi (15h-21h) : '.if($tablo["samAprem"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Dimanche matin (9h-15h) : '.if($tablo["dimMat"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        Le Dimanche après-midi (15h-21h) : '.if($tablo["marAprem"]==1){echo('Présent')}else{echo('Non Présent')}.'<br>
+        <br>
+        Si une erreur s’est glissée dans cette liste d’information merci de nous contacter à l’adresse e-mail suivante : @  .com .<br>
+        <br>
+        Vous serez tenu au courant pour l’ensemble des formalités liées à votre inscription à l’Orléans Masters Badminton.<br> 
+        <br>
+        Nous vous remercions pour votre engagement.<br>
+        <br>
+        Sportivement,<br>
+        L’équipe de l’Orléans Masters Badminton
         </p>';
 
-$retour = mail($mail, "Vérification d'inscription", $message, $entete);
+$retour = mail($mail, "Verification inscription", $message, $entete);
 if($retour) {
     echo '<p>Votre message a bien été envoyé.</p>';
 }
