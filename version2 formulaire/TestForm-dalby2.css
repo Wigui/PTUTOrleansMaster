@@ -1,0 +1,78 @@
+#mainNav {
+  background: white;
+}
+
+#mainNav img{
+	width:200px;
+	height:112px;
+}
+
+#CentrePage{
+	display:flex;
+	justify-content: center;
+	background-color: lightgray;
+
+}
+
+
+
+fieldset{
+background-color: white;	
+width:100%;
+margin:auto;
+
+-moz-box-shadow: 10px 10px 5px 0px #656565;
+-webkit-box-shadow: 10px 10px 5px 0px #656565;
+-o-box-shadow: 10px 10px 5px 0px #656565;
+box-shadow: 5px 5px 5px 0px #656565;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=5);
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+
+
+
+.QuestionsPréléminaires p{
+font-size:x-large;
+text-decoration: underline;
+}
+
+.MesInformationsPersonnelles p{
+font-size:x-large;
+text-decoration: underline;
+}
+
+.MonPoste p{
+font-size:x-large;
+text-decoration: underline;
+}
+
+.MesDisponibilités p{
+font-size:x-large;
+text-decoration: underline;
+}
+
+.MailRécapitulatif p{
+font-size:x-large;
+text-decoration: underline;
+}
+
+button{
+	float:right;
+	border-radius: 10px;
+}
+
+
+input,label,textarea,p{
+	margin-left: 20px;
+	
+}
+
+select{
+	margin-left: 20px;
+}
+
+.footer-copyright{
+	background-color:#3A3A3A;
+}
