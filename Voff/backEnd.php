@@ -19,7 +19,7 @@ echo'<table style="border:1px solid black;">';
 	echo
 	'<td>ID</td>
 	<td>Nom</td>
-	<td>Prennom</td>
+	<td>Prenom</td>
 	<td>Club</td>
 	<td>Déja Bénévole</td>
 	<td>Licencié</td>
@@ -38,25 +38,21 @@ echo'<table style="border:1px solid black;">';
 	</tr>';
 
 while ($donnee=$q->fetch(PDO::FETCH_ASSOC)) {
+	
 	echo '<tr>';
 	echo 
 	'<td>'.$donnee['idPerso'].'</td>
-	<td>'.$donnee['nom'].'</td>
-	<td>'.$donnee['prenom'].'</td>
-	<td>'.$donnee['club'].'</td>	
-	<td>'.$donnee['dejBene'].'</td>
-	<td>'.$donnee['licence'].'</td>
-	<td>'.$donnee['textarea'].'</td>
-	<td>'.$donnee['reglement'].'</td>
-	<td>'.$donnee['numeroTel'].'</td>
-	<td>'.$donnee['mail'].'</td>
-	<td>'.$donnee['tShirt'].'</td>
-	<td>'.$donnee['lang1'].'</td>
-	<td>'.$donnee['lang2'].'</td>
-	<td>'.$donnee['lang3'].'</td>
-	<td>'.$donnee['poste1'].'</td>
-	<td>'.$donnee['poste2'].'</td>
-	<td>'.$donnee['poste3'].'</td>
+	<td>'.'<input type="text" name="nom" value='.$donnee['nom'].'>'.'</td>
+	<td>'.'<input type="text" name="prenom" value='.$donnee['prenom'].'>'.'</td>
+	<td>'.'<input type="text" name="club" value='.$donnee['club'].'>'.'</td>
+	<td>'.'<input type="text" name="numeroTel" value='.$donnee['numeroTel'].'>'.'</td>
+	<td>'.'<input type="text" name="mail" value='.$donnee['mail'].'>'.'</td>
+	<td>'.$donnee['lang1'].'</td>-
+	<td>'.$donnee['lang2'].'</td>-
+	<td>'.$donnee['lang3'].'</td>-
+	<td>'.$donnee['poste1'].'</td>-
+	<td>'.$donnee['poste2'].'</td>-
+	<td>'.$donnee['poste3'].'</td>-
 	<td>'.$donnee['marMat'].'</td>
 	<td>'.$donnee['marAprem'].'</td>
 	<td>'.$donnee['merMat'].'</td>
@@ -72,4 +68,42 @@ while ($donnee=$q->fetch(PDO::FETCH_ASSOC)) {
 	echo '</tr>';
 }
 echo'</table>';
-?>
+
+$req2=$bdd->prepare(
+    "INSERT INTO infoperso (nom, prenom, club, age, mail, numeroTel) 
+    VALUES (:nom, :prenom, :club, :age, :mail, :numeroTel)"
+    );
+
+$req2->execute(array(
+    'dejBene'=>$dejBene, 
+    'licence'=>$licence, 
+    'textarea'=>$textarea, 
+    'reglement'=>$reglement,
+    'nom'=>$nom, 
+    'prenom'=>$prenom, 
+    'club'=>$club, 
+    'age'=>$age, 
+    'mail'=>$mail, 
+    'numeroTel'=>$numeroTel, 
+    'tShirt'=>$tShirt, 
+    'lang1'=>$lang1, 
+    'lang2'=>$lang2, 
+    'lang3'=>$lang3, 
+    'post1'=>$post1, 
+    'post2'=>$post2, 
+    'post3'=>$post3, 
+    'marMat'=>$marMat, 
+    'marAprem'=>$marAprem, 
+    'merMat'=>$merMat, 
+    'merAprem'=>$merAprem, 
+    'jeuMat'=>$jeuMat, 
+    'jeuAprem'=>$jeuAprem, 
+    'venMat'=>$venMat, 
+    'venAprem'=>$venAprem, 
+    'samMat'=>$samMat, 
+    'samAprem'=>$samAprem, 
+    'dimMat'=>$dimMat, 
+    'dimAprem'=>$dimAprem
+));
+
+?>sehrjj
